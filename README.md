@@ -1,4 +1,4 @@
-## CONFIG FOR DM
+## $\text{CONFIG FOR DM}$ 
     
 ### $\text{Them codes i stolen from astronvim}$ 
 
