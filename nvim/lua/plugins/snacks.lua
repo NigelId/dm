@@ -6,5 +6,6 @@ return {
       easing = "Quad",
       fps = 120,
     },
+    scroll = { enabled = true },
   },
 }
