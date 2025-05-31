@@ -1,0 +1,114 @@
+#!/usr/bin/env bash
+
+function mvmac() {
+  [[ "${#}" -eq 0 ]] && echo "No path selected" && return 1
+    cp ""/home/dm/latex/latex_template/{letterfonts.tex,macros.tex,preamble.tex,template.tex,vntex.tex} "${1}"
+}
+
+function view(){
+  local var=
+if [[ "${#}" -eq 0 ]]; then 
+    var="$(fd 'pdf$|html$|txt$' | fzf -m | xargs -I{} echo "{};" )"
+
+    [[ -z "$var" ]] && echo "No file selected" && return 1
+
+    IFS=$';\n\t'
+  for src in $var; do 
+    src=$(realpath "$src" | sed 's/\/mnt\///')
+
+    [[ "$src" =~ ^c ]] && chrome.exe "C:${src#c}" && continue
+    [[ "$src" =~ ^d ]] && chrome.exe "D:${src#d}" && continue
+
+    chrome.exe "file://wsl.localhost/Arch${src}"
+  done
+  IFS=$' \n\t'
+else
+  for var in "${@}"; do 
+    var=$(realpath "$var" | sed 's/\/mnt\///')
+
+    [[ ! -f "$var" ]] && echo "Input file does not exist" && continue
+    [[ ! "$var" =~ pdf$|html$|txt$ ]] && echo "Invalid file type" && continue
+
+    [[ "$var" =~ ^c ]] && chrome.exe "C:${var#c}" && continue 
+    [[ "$var" =~ ^d ]] && chrome.exe "D:${var#d}" && continue
+
+    chrome.exe "file://wsl.localhost/Arch${var}"
+  done
+
+fi
+}
+
+function search () {
+
+  [[ "${#}" -eq 0 ]] && echo "You have searched nothing !" && return 1
+  [[ "${1}" == "-i" && "${#}" -eq 1 ]] && 
+    printf "You have searched nothing!\nOpening Incognito mode" && chrome.exe "-incognito" &&return 1
+
+  if [[ "${1}" == "-i" ]]; then
+    chrome.exe "-incognito https://google.com/search?q=${*#"$1"}"
+  else
+    chrome.exe "https://google.com/search?q=${*#}"
+  fi
+}
+
+function gurl (){
+  local link="https://"
+
+  [[ "${#}" -eq 0 ]] && echo "You have searched nothing !" && return 1
+  [[ "${1}" == "-i" && "${#}" -eq 1 ]] && 
+    printf "You have searched nothing!\nOpening Incognito mode !" && chrome.exe "-incognito" &&return 1
+
+  if [[ "${1}" == "-i" ]]; then
+    for i in "${@:2}"; do
+          chrome.exe "-incognito ${link}${i#https://}"
+    done
+  else
+    for i in "${@}"; do
+          chrome.exe "${link}${i#https://}"
+    done
+  fi
+}
+
+function _chrome() {
+
+  [[ "${#}" -eq 0 ]] && echo "Opening Chrome !" && chrome.exe && return 0
+  [[ "${#}" -eq 1 && "$1" == "-i " ]] && echo "Opening Incognito mode !" && chrome.exe && return 1
+
+  while [[ "${#}" -gt 0 ]]; do
+case "${1}" in
+  -v|--view|view)
+  if [[ -z "$2" ]]; then 
+    view
+    return 0
+  fi
+  view "${@:2}"
+  shift "${#}"
+    ;;
+  -s|--search|search)
+    [[ -z "$2" ]] && echo "You have searched nothing !" && return 1
+    search "${*#"$1"}"
+    shift "${#}"
+    ;;
+  -si|-is)
+    [[ -z "$2" ]] && echo "You have searched nothing !" && return 1
+    search "-i" "${*#"$1"}"
+    shift "${#}"
+    ;;
+  *)
+    gurl "$@"
+    shift "${#}"
+    ;;
+esac
+  done
+}
+
+function youtube()
+{
+  [[ "${#}" -eq 0 ]] && gurl "youtube.com" && return 0
+  gurl "https://www.youtube.com/results?search_query=${*}"
+}
+
+function PDF()
+{
+  fd "pdf$" /home/dm/Downloads/Downloads/ | xargs -I{} mv "{}" "/home/dm/pdf/" 
+}
