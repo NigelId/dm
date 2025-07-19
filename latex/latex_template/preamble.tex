@@ -37,7 +37,13 @@
     \def\svgwidth{\columnwidth}
     \import{./figures/}{#1.pdf_tex}
 }
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
 
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\csname the#1\endcsname. }
+
+\makeatother
 \usepackage{tikzsymbols}
 \tikzset{
 	symbol/.style={
@@ -714,16 +720,16 @@
 	\end{tikzpicture}}%
 \titlecontents{section}[3.7pc]
 {\addvspace{2pt}}
-{\contentslabel[\thecontentslabel]{2pc}}
+{\contentslabel[\thecontentslabel.]{2pc}}
 {}
 {\hfill\small \thecontentspage}
 []
-\titlecontents*{subsection}[3.7pc]
-{\addvspace{-1pt}\small}
+\titlecontents*{subsection}[4.4pc]
+{\addvspace{1pt}\small}
+{\textbullet \quad}
 {}
-{}
-{\ --- \small\thecontentspage}
-[ \textbullet\ ][]
+{\hfill\small\thecontentspage}[\newline]
+[]
 
 \makeatletter
 \renewcommand{\tableofcontents}{%
