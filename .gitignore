@@ -1,4 +1,4 @@
-*.tex
+notes/*.tex
 *.aux
 *.
 *.fdb_latexmk
