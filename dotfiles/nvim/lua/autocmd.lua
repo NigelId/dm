@@ -1,5 +1,3 @@
-vim.api.nvim_create_augroup("format-on-save", { clear = true })
-
 vim.api.nvim_create_augroup("markdown", { clear = true })
 vim.api.nvim_create_autocmd("BufEnter", {
   group = "markdown",
@@ -19,6 +17,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     Snacks.notifier.notify(name, "info", { style = "fancy", title = "Saved", timeout = 1000 })
   end,
 })
+
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = { "*.cpp" },
   callback = function()

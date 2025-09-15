@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   opts = {
     options = {
-      theme = "eldritch",
+      theme = "gruvbox",
     },
     sections = {
       lualine_c = { "filename", "macro_recording", "%S" },

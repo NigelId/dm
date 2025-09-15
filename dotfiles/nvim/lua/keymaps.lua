@@ -1,4 +1,3 @@
-vim.keymap.set("n", "<leader><F2>", ':w<cr><BAR><cmd>!start chrome "%:p"<cr>', { desc = "Open file in Chrome" })
 vim.keymap.set("n", "<F5>", function()
   local filetype = vim.bo.filetype
   if filetype == "markdown" then
@@ -14,3 +13,4 @@ vim.keymap.set("n", "<F5>", function()
 end)
 vim.keymap.set("v", "<F3>", ":CBalbox<cr>", { silent = true })
 vim.keymap.set("n", "<leader>tt", ":ToggleTerm<cr>", { desc = "toggle terminal" })
+vim.keymap.set("n", "vv", "<C-v>")

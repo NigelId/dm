@@ -17,9 +17,10 @@ end
 
 require "lazy_setup"
 require "polish"
+
 vim.opt.termguicolors = true
+vim.g.tex_flavor = "latex"
+
 require "keymaps"
 
 require "autocmd"
-
-vim.g.snacks_animate = true
