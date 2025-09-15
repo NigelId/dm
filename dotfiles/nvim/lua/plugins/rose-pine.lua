@@ -7,8 +7,8 @@ return {
     require("rose-pine").setup {
       before_highlight = function() end,
       dark_variant = "moon",
-      variant = "moon",
-      dim_inactive_windows = false,
+      variant = "dawn",
+      dim_inactive_windows = true,
       extend_background_behind_borders = true,
       styles = {
         bold = false,

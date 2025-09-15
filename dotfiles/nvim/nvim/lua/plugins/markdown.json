@@ -1,0 +1,1106 @@
+{
+    "header 1": {
+        "prefix": "h1",
+        "body": ["# ${0}"],
+        "description": "Add header level 1"
+    },
+    "header 2": {
+        "prefix": "h2",
+        "body": ["## ${0}"],
+        "description": "Add header level 2"
+    },
+    "header 3": {
+        "prefix": "h3",
+        "body": ["### ${0}"],
+        "description": "Add header level 3"
+    },
+    "header 4": {
+        "prefix": "h4",
+        "body": ["#### ${0}"],
+        "description": "Add header level 4"
+    },
+    "header 5": {
+        "prefix": "h5",
+        "body": ["##### ${0}"],
+        "description": "Add header level 5"
+    },
+    "header 6": {
+        "prefix": "h6",
+        "body": ["###### ${0}"],
+        "description": "Add header level 6"
+    },
+    "Links": {
+        "prefix": ["l", "link"],
+        "body": ["[${1:text}](${2:url}) ${0}"],
+        "description": "Add links"
+    },
+    "URLS": {
+        "prefix": ["u", "url"],
+        "body": ["<${1}> ${0}"],
+        "description": "Add urls"
+    },
+    "Images": {
+        "prefix": "img",
+        "body": ["![${1:alt text}](${2:path}) ${0}"],
+        "description": "Add images"
+    },
+    "Insert strikethrough": {
+        "prefix": "strikethrough",
+        "body": "~~${1}~~ ${0}",
+        "description": "Insert strikethrough"
+    },
+    "Insert bold text": {
+        "prefix": ["bold", "b"],
+        "body": "**${1}** $0",
+        "description": "Insert bold text"
+    },
+    "Insert italic text": {
+        "prefix": ["i", "italic"],
+        "body": "*${1}* $0",
+        "description": "Insert italic text"
+    },
+    "Insert bold and italic text": {
+        "prefix": ["bold and italic", "bi"],
+        "body": "***${1}*** $0",
+        "description": "Insert bold and italic text"
+    },
+    "Insert quoted text": {
+        "prefix": "quote",
+        "body": "> ${1}",
+        "description": "Insert quoted text"
+    },
+    "Insert code": {
+        "prefix": "code",
+        "body": "`${1}` $0",
+        "description": "Insert code"
+    },
+    "Insert code block": {
+        "prefix": "codeblock",
+        "body": ["```${1:language}", "$0", "```"],
+        "description": "Insert fenced code block"
+    },
+    "Insert unordered list": {
+        "prefix": "unordered list",
+        "body": ["- ${1:first}", "- ${2:second}", "- ${3:third}", "$0"],
+        "description": "Insert unordered list"
+    },
+    "Insert ordered list": {
+        "prefix": "ordered list",
+        "body": ["1. ${1:first}", "2. ${2:second}", "3. ${3:third}", "$0"],
+        "description": "Insert ordered list"
+    },
+    "Insert horizontal rule": {
+        "prefix": "horizontal rule",
+        "body": "----------\n",
+        "description": "Insert horizontal rule"
+    },
+    "Insert task list": {
+        "prefix": "task",
+        "body": ["- [${1| ,x|}] ${2:text}", "${0}"],
+        "description": "Insert task list"
+    },
+    "Insert task list 2": {
+        "prefix": "task2",
+        "body": ["- [${1| ,x|}] ${2:text}", "- [${3| ,x|}] ${4:text}", "${0}"],
+        "description": "Insert task list with 2 tasks"
+    },
+    "Insert task list 3": {
+        "prefix": "task3",
+        "body": [
+            "- [${1| ,x|}] ${2:text}",
+            "- [${3| ,x|}] ${4:text}",
+            "- [${5| ,x|}] ${6:text}",
+            "${0}"
+        ],
+        "description": "Insert task list with 3 tasks"
+    },
+    "Insert task list 4": {
+        "prefix": "task4",
+        "body": [
+            "- [${1| ,x|}] ${2:text}",
+            "- [${3| ,x|}] ${4:text}",
+            "- [${5| ,x|}] ${6:text}",
+            "- [${7| ,x|}] ${8:text}",
+            "${0}"
+        ],
+        "description": "Insert task list with 4 tasks"
+    },
+    "Insert task list 5": {
+        "prefix": "task5",
+        "body": [
+            "- [${1| ,x|}] ${2:text}",
+            "- [${3| ,x|}] ${4:text}",
+            "- [${5| ,x|}] ${6:text}",
+            "- [${7| ,x|}] ${8:text}",
+            "- [${9| ,x|}] ${10:text}",
+            "${0}"
+        ],
+        "description": "Insert task list with 5 tasks"
+    },
+    "Insert table": {
+        "prefix": "table",
+        "body": [
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} |",
+            "| ------------- | -------------- | -------------- |",
+            "| ${4:Item1} | ${5:Item1} | ${6:Item1} |",
+            "${0}"
+        ],
+        "description": "Insert table with 2 rows and 3 columns. First row is heading."
+    },
+    "Insert 2x1 table": {
+        "prefix": "2x1table",
+        "body": [
+            "| ${1:Column1} |",
+            "| ------------- |",
+            "| ${2:Item1} |",
+            "${0}"
+        ],
+        "description": "Insert table with 2 rows and 1 column. First row is heading."
+    },
+    "Insert 3x1 table": {
+        "prefix": "3x1table",
+        "body": [
+            "| ${1:Column1} |",
+            "| ------------- |",
+            "| ${2:Item1} |",
+            "| ${3:Item2} |",
+            "${0}"
+        ],
+        "description": "Insert table with 3 rows and 1 column. First row is heading."
+    },
+    "Insert 4x1 table": {
+        "prefix": "4x1table",
+        "body": [
+            "| ${1:Column1} |",
+            "| ------------- |",
+            "| ${2:Item1} |",
+            "| ${3:Item2} |",
+            "| ${4:Item3} |",
+            "${0}"
+        ],
+        "description": "Insert table with 4 rows and 1 column. First row is heading."
+    },
+    "Insert 5x1 table": {
+        "prefix": "5x1table",
+        "body": [
+            "| ${1:Column1} |",
+            "| ------------- |",
+            "| ${2:Item1} |",
+            "| ${3:Item2} |",
+            "| ${4:Item3} |",
+            "| ${5:Item4} |",
+            "${0}"
+        ],
+        "description": "Insert table with 5 rows and 1 column. First row is heading."
+    },
+    "Insert 2x2 table": {
+        "prefix": "2x2table",
+        "body": [
+            "| ${1:Column1} | ${2:Column2} |",
+            "| -------------- | --------------- |",
+            "| ${3:Item1.1} | ${4:Item2.1} |",
+            "${0}"
+        ],
+        "description": "Insert table with 2 rows and 2 columns. First row is heading."
+    },
+    "Insert 3x2 table": {
+        "prefix": "3x2table",
+        "body": [
+            "| ${1:Column1} | ${2:Column2} |",
+            "| -------------- | --------------- |",
+            "| ${3:Item1.1} | ${4:Item2.1} |",
+            "| ${5:Item1.2} | ${6:Item2.2} |",
+            "${0}"
+        ],
+        "description": "Insert table with 3 rows and 2 columns. First row is heading."
+    },
+    "Insert 4x2 table": {
+        "prefix": "4x2table",
+        "body": [
+            "| ${1:Column1} | ${2:Column2} |",
+            "| -------------- | --------------- |",
+            "| ${3:Item1.1} | ${4:Item2.1} |",
+            "| ${5:Item1.2} | ${6:Item2.2} |",
+            "| ${7:Item1.3} | ${8:Item2.3} |",
+            "${0}"
+        ],
+        "description": "Insert table with 4 rows and 2 columns. First row is heading."
+    },
+    "Insert 5x2 table": {
+        "prefix": "5x2table",
+        "body": [
+            "| ${1:Column1}   | ${2:Column2}    |",
+            "|--------------- | --------------- |",
+            "| ${3:Item1.1}   | ${4:Item2.1}   |",
+            "| ${5:Item1.2}   | ${6:Item2.2}   |",
+            "| ${7:Item1.3}   | ${8:Item2.3}   |",
+            "| ${9:Item1.4}   | ${10:Item2.4}   |",
+            "${0}"
+        ],
+        "description": "Insert table with 5 rows and 2 columns. First row is heading."
+    },
+    "Insert 2x3 table": {
+        "prefix": "2x3table",
+        "body": [
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} |",
+            "| --------------- | --------------- | --------------- |",
+            "| ${4:Item1.1} | ${5:Item2.1} | ${6:Item3.1} |",
+            "${0}"
+        ],
+        "description": "Insert table with 2 rows and 3 columns. First row is heading."
+    },
+    "Insert 3x3 table": {
+        "prefix": "3x3table",
+        "body": [
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} |",
+            "| --------------- | --------------- | --------------- |",
+            "| ${4:Item1.1} | ${5:Item2.1} | ${6:Item3.1} |",
+            "| ${7:Item1.2} | ${8:Item2.2} | ${9:Item3.2} |",
+            "${0}"
+        ],
+        "description": "Insert table with 3 rows and 3 columns. First row is heading."
+    },
+    "Insert 4x3 table": {
+        "prefix": "4x3table",
+        "body": [
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} |",
+            "| --------------- | --------------- | --------------- |",
+            "| ${4:Item1.1} | ${5:Item2.1} | ${6:Item3.1} |",
+            "| ${7:Item1.2} | ${8:Item2.2} | ${9:Item3.2} |",
+            "| ${10:Item1.3} | ${11:Item2.3} | ${12:Item3.3} |",
+            "${0}"
+        ],
+        "description": "Insert table with 4 rows and 3 columns. First row is heading."
+    },
+    "Insert 5x3 table": {
+        "prefix": "5x3table",
+        "body": [
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} |",
+            "| --------------- | --------------- | --------------- |",
+            "| ${4:Item1.1} | ${5:Item2.1} | ${6:Item3.1} |",
+            "| ${7:Item1.2} | ${8:Item2.2} | ${9:Item3.2} |",
+            "| ${10:Item1.3} | ${11:Item2.3} | ${12:Item3.3} |",
+            "| ${13:Item1.4} | ${14:Item2.4} | ${15:Item3.4} |",
+            "${0}"
+        ],
+        "description": "Insert table with 5 rows and 3 columns. First row is heading."
+    },
+    "Insert 2x4 table": {
+        "prefix": "2x4table",
+        "body": [
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} |",
+            "| --------------- | --------------- | --------------- | --------------- |",
+            "| ${5:Item1.1} | ${6:Item2.1} | ${7:Item3.1} | ${8:Item4.1} |",
+            "${0}"
+        ],
+        "description": "Insert table with 2 rows and 4 columns. First row is heading."
+    },
+    "Insert 3x4 table": {
+        "prefix": "3x4table",
+        "body": [
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} |",
+            "| --------------- | --------------- | --------------- | --------------- |",
+            "| ${5:Item1.1} | ${6:Item2.1} | ${7:Item3.1} | ${8:Item4.1} |",
+            "| ${9:Item1.2} | ${10:Item2.2} | ${11:Item3.2} | ${12:Item4.2} |",
+            "${0}"
+        ],
+        "description": "Insert table with 3 rows and 4 columns. First row is heading."
+    },
+    "Insert 4x4 table": {
+        "prefix": "4x4table",
+        "body": [
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} |",
+            "| --------------- | --------------- | --------------- | --------------- |",
+            "| ${5:Item1.1} | ${6:Item2.1} | ${7:Item3.1} | ${8:Item4.1} |",
+            "| ${9:Item1.2} | ${10:Item2.2} | ${11:Item3.2} | ${12:Item4.2} |",
+            "| ${13:Item1.3} | ${14:Item2.3} | ${15:Item3.3} | ${16:Item4.3} |",
+            "${0}"
+        ],
+        "description": "Insert table with 4 rows and 4 columns. First row is heading."
+    },
+    "Insert 5x4 table": {
+        "prefix": "5x4table",
+        "body": [
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} |",
+            "| --------------- | --------------- | --------------- | --------------- |",
+            "| ${5:Item1.1} | ${6:Item2.1} | ${7:Item3.1} | ${8:Item4.1} |",
+            "| ${9:Item1.2} | ${10:Item2.2} | ${11:Item3.2} | ${12:Item4.2} |",
+            "| ${13:Item1.3} | ${14:Item2.3} | ${15:Item3.3} | ${16:Item4.3} |",
+            "| ${17:Item1.4} | ${18:Item2.4} | ${19:Item3.4} | ${20:Item4.4} |",
+            "${0}"
+        ],
+        "description": "Insert table with 5 rows and 4 columns. First row is heading."
+    },
+    "Insert 2x5 table": {
+        "prefix": "2x5table",
+        "body": [
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} | ${5:Column5} |",
+            "| --------------- | --------------- | --------------- | --------------- | --------------- |",
+            "| ${6:Item1.1} | ${7:Item2.1} | ${8:Item3.1} | ${9:Item4.1} | ${10:Item5.1} |",
+            "${0}"
+        ],
+        "description": "Insert table with 2 rows and 5 columns. First row is heading."
+    },
+    "Insert 3x5 table": {
+        "prefix": "3x5table",
+        "body": [
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} | ${5:Column5} |",
+            "| --------------- | --------------- | --------------- | --------------- | --------------- |",
+            "| ${6:Item1.1} | ${7:Item2.1} | ${8:Item3.1} | ${9:Item4.1} | ${10:Item5.1} |",
+            "| ${11:Item1.2} | ${12:Item2.2} | ${13:Item3.2} | ${14:Item4.2} | ${15:Item5.2} |",
+            "${0}"
+        ],
+        "description": "Insert table with 3 rows and 5 columns. First row is heading."
+    },
+    "Insert 4x5 table": {
+        "prefix": "4x5table",
+        "body": [
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} | ${5:Column5} |",
+            "| --------------- | --------------- | --------------- | --------------- | --------------- |",
+            "| ${6:Item1.1} | ${7:Item2.1} | ${8:Item3.1} | ${9:Item4.1} | ${10:Item5.1} |",
+            "| ${11:Item1.2} | ${12:Item2.2} | ${13:Item3.2} | ${14:Item4.2} | ${15:Item5.2} |",
+            "| ${16:Item1.3} | ${17:Item2.3} | ${18:Item3.3} | ${19:Item4.3} | ${20:Item5.3} |",
+            "${0}"
+        ],
+        "description": "Insert table with 4 rows and 5 columns. First row is heading."
+    },
+    "Insert 5x5 table": {
+        "prefix": "5x5table",
+        "body": [
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} | ${5:Column5} |",
+            "| --------------- | --------------- | --------------- | --------------- | --------------- |",
+            "| ${6:Item1.1} | ${7:Item2.1} | ${8:Item3.1} | ${9:Item4.1} | ${10:Item5.1} |",
+            "| ${11:Item1.2} | ${12:Item2.2} | ${13:Item3.2} | ${14:Item4.2} | ${15:Item5.2} |",
+            "| ${16:Item1.3} | ${17:Item2.3} | ${18:Item3.3} | ${19:Item4.3} | ${20:Item5.3} |",
+            "| ${21:Item1.4} | ${22:Item2.4} | ${23:Item3.4} | ${24:Item4.4} | ${25:Item5.4} |",
+            "${0}"
+        ],
+        "description": "Insert table with 5 rows and 5 columns. First row is heading."
+    },
+    "Insert subscript": {
+        "prefix": "sub",
+        "body": ["${1}<sub>${0}"],
+        "description": "Create a subscript."
+    },
+    "Insert superscript": {
+        "prefix": "sup",
+        "body": ["${1}<sup>${0}"],
+        "description": "Create a superscript."
+    },
+    "Insert Latex text" : {
+        "prefix" : ["tx"],
+        "body" : "\\text{$1}$0"
+    },
+    "Insert Latex text env" : {
+        "prefix" : ["mtx"],
+        "body" : "$\\text{$1}$0$"
+    },
+    "Insert color" : {
+        "prefix" : ["color"],
+        "body" : "<span style='color:$1'>$2</span>$0"
+    },
+    "Insert black" : {
+        "prefix" : ["black"],
+        "body" : "<span style='color:black'>$1</span>$0"
+    },
+    "Insert silver" : {
+        "prefix" : ["silver"],
+        "body" : "<span style='color:silver'>$1</span>$0"
+    },
+    "Insert gray" : {
+        "prefix" : ["gray"],
+        "body" : "<span style='color:gray'>$1</span>$0"
+    },
+    "Insert white" : {
+        "prefix" : ["white"],
+        "body" : "<span style='color:white'>$1</span>$0"
+    },
+    "Insert maroon" : {
+        "prefix" : ["maroon"],
+        "body" : "<span style='color:maroon'>$1</span>$0"
+    },
+    "Insert red" : {
+        "prefix" : ["red"],
+        "body" : "<span style='color:red'>$1</span>$0"
+    },
+    "Insert purple" : {
+        "prefix" : ["purple"],
+        "body" : "<span style='color:purple'>$1</span>$0"
+    },
+    "Insert fuchsia" : {
+        "prefix" : ["fuchsia"],
+        "body" : "<span style='color:fuchsia'>$1</span>$0"
+    },
+    "Insert green" : {
+        "prefix" : ["green"],
+        "body" : "<span style='color:green'>$1</span>$0"
+    },
+    "Insert lime" : {
+        "prefix" : ["lime"],
+        "body" : "<span style='color:lime'>$1</span>$0"
+    },
+    "Insert olive" : {
+        "prefix" : ["olive"],
+        "body" : "<span style='color:olive'>$1</span>$0"
+    },
+    "Insert yellow" : {
+        "prefix" : ["yellow"],
+        "body" : "<span style='color:yellow'>$1</span>$0"
+    },
+    "Insert navy" : {
+        "prefix" : ["navy"],
+        "body" : "<span style='color:navy'>$1</span>$0"
+    },
+    "Insert blue" : {
+        "prefix" : ["blue"],
+        "body" : "<span style='color:blue'>$1</span>$0"
+    },
+    "Insert teal" : {
+        "prefix" : ["teal"],
+        "body" : "<span style='color:teal'>$1</span>$0"
+    },
+    "Insert aqua" : {
+        "prefix" : ["aqua"],
+        "body" : "<span style='color:aqua'>$1</span>$0"
+    },
+    "Insert aliceblue" : {
+        "prefix" : ["aliceblue"],
+        "body" : "<span style='color:aliceblue'>$1</span>$0"
+    },
+    "Insert antiquewhite" : {
+        "prefix" : ["antiquewhite"],
+        "body" : "<span style='color:antiquewhite'>$1</span>$0"
+    },
+    "Insert aqua" : {
+        "prefix" : ["aqua"],
+        "body" : "<span style='color:aqua'>$1</span>$0"
+    },
+    "Insert aquamarine" : {
+        "prefix" : ["aquamarine"],
+        "body" : "<span style='color:aquamarine'>$1</span>$0"
+    },
+    "Insert azure" : {
+        "prefix" : ["azure"],
+        "body" : "<span style='color:azure'>$1</span>$0"
+    },
+    "Insert beige" : {
+        "prefix" : ["beige"],
+        "body" : "<span style='color:beige'>$1</span>$0"
+    },
+    "Insert bisque" : {
+        "prefix" : ["bisque"],
+        "body" : "<span style='color:bisque'>$1</span>$0"
+    },
+    "Insert black" : {
+        "prefix" : ["black"],
+        "body" : "<span style='color:black'>$1</span>$0"
+    },
+    "Insert blanchedalmond" : {
+        "prefix" : ["blanchedalmond"],
+        "body" : "<span style='color:blanchedalmond'>$1</span>$0"
+    },
+    "Insert blue" : {
+        "prefix" : ["blue"],
+        "body" : "<span style='color:blue'>$1</span>$0"
+    },
+    "Insert blueviolet" : {
+        "prefix" : ["blueviolet"],
+        "body" : "<span style='color:blueviolet'>$1</span>$0"
+    },
+    "Insert brown" : {
+        "prefix" : ["brown"],
+        "body" : "<span style='color:brown'>$1</span>$0"
+    },
+    "Insert burlywood" : {
+        "prefix" : ["burlywood"],
+        "body" : "<span style='color:burlywood'>$1</span>$0"
+    },
+    "Insert cadetblue" : {
+        "prefix" : ["cadetblue"],
+        "body" : "<span style='color:cadetblue'>$1</span>$0"
+    },
+    "Insert chartreuse" : {
+        "prefix" : ["chartreuse"],
+        "body" : "<span style='color:chartreuse'>$1</span>$0"
+    },
+    "Insert chocolate" : {
+        "prefix" : ["chocolate"],
+        "body" : "<span style='color:chocolate'>$1</span>$0"
+    },
+    "Insert coral" : {
+        "prefix" : ["coral"],
+        "body" : "<span style='color:coral'>$1</span>$0"
+    },
+    "Insert cornflowerblue" : {
+        "prefix" : ["cornflowerblue"],
+        "body" : "<span style='color:cornflowerblue'>$1</span>$0"
+    },
+    "Insert cornsilk" : {
+        "prefix" : ["cornsilk"],
+        "body" : "<span style='color:cornsilk'>$1</span>$0"
+    },
+    "Insert crimson" : {
+        "prefix" : ["crimson"],
+        "body" : "<span style='color:crimson'>$1</span>$0"
+    },
+    "Insert cyan" : {
+        "prefix" : ["cyan"],
+        "body" : "<span style='color:cyan'>$1</span>$0"
+    },
+    "Insert darkblue" : {
+        "prefix" : ["darkblue"],
+        "body" : "<span style='color:darkblue'>$1</span>$0"
+    },
+    "Insert darkcyan" : {
+        "prefix" : ["darkcyan"],
+        "body" : "<span style='color:darkcyan'>$1</span>$0"
+    },
+    "Insert darkgoldenrod" : {
+        "prefix" : ["darkgoldenrod"],
+        "body" : "<span style='color:darkgoldenrod'>$1</span>$0"
+    },
+    "Insert darkgray" : {
+        "prefix" : ["darkgray"],
+        "body" : "<span style='color:darkgray'>$1</span>$0"
+    },
+    "Insert darkgreen" : {
+        "prefix" : ["darkgreen"],
+        "body" : "<span style='color:darkgreen'>$1</span>$0"
+    },
+    "Insert darkgrey" : {
+        "prefix" : ["darkgrey"],
+        "body" : "<span style='color:darkgrey'>$1</span>$0"
+    },
+    "Insert darkkhaki" : {
+        "prefix" : ["darkkhaki"],
+        "body" : "<span style='color:darkkhaki'>$1</span>$0"
+    },
+    "Insert darkmagenta" : {
+        "prefix" : ["darkmagenta"],
+        "body" : "<span style='color:darkmagenta'>$1</span>$0"
+    },
+    "Insert darkolivegreen" : {
+        "prefix" : ["darkolivegreen"],
+        "body" : "<span style='color:darkolivegreen'>$1</span>$0"
+    },
+    "Insert darkorange" : {
+        "prefix" : ["darkorange"],
+        "body" : "<span style='color:darkorange'>$1</span>$0"
+    },
+    "Insert darkorchid" : {
+        "prefix" : ["darkorchid"],
+        "body" : "<span style='color:darkorchid'>$1</span>$0"
+    },
+    "Insert darkred" : {
+        "prefix" : ["darkred"],
+        "body" : "<span style='color:darkred'>$1</span>$0"
+    },
+    "Insert darksalmon" : {
+        "prefix" : ["darksalmon"],
+        "body" : "<span style='color:darksalmon'>$1</span>$0"
+    },
+    "Insert darkseagreen" : {
+        "prefix" : ["darkseagreen"],
+        "body" : "<span style='color:darkseagreen'>$1</span>$0"
+    },
+    "Insert darkslateblue" : {
+        "prefix" : ["darkslateblue"],
+        "body" : "<span style='color:darkslateblue'>$1</span>$0"
+    },
+    "Insert darkslategray" : {
+        "prefix" : ["darkslategray"],
+        "body" : "<span style='color:darkslategray'>$1</span>$0"
+    },
+    "Insert darkslategrey" : {
+        "prefix" : ["darkslategrey"],
+        "body" : "<span style='color:darkslategrey'>$1</span>$0"
+    },
+    "Insert darkturquoise" : {
+        "prefix" : ["darkturquoise"],
+        "body" : "<span style='color:darkturquoise'>$1</span>$0"
+    },
+    "Insert darkviolet" : {
+        "prefix" : ["darkviolet"],
+        "body" : "<span style='color:darkviolet'>$1</span>$0"
+    },
+    "Insert deeppink" : {
+        "prefix" : ["deeppink"],
+        "body" : "<span style='color:deeppink'>$1</span>$0"
+    },
+    "Insert deepskyblue" : {
+        "prefix" : ["deepskyblue"],
+        "body" : "<span style='color:deepskyblue'>$1</span>$0"
+    },
+    "Insert dimgray" : {
+        "prefix" : ["dimgray"],
+        "body" : "<span style='color:dimgray'>$1</span>$0"
+    },
+    "Insert dimgrey" : {
+        "prefix" : ["dimgrey"],
+        "body" : "<span style='color:dimgrey'>$1</span>$0"
+    },
+    "Insert dodgerblue" : {
+        "prefix" : ["dodgerblue"],
+        "body" : "<span style='color:dodgerblue'>$1</span>$0"
+    },
+    "Insert firebrick" : {
+        "prefix" : ["firebrick"],
+        "body" : "<span style='color:firebrick'>$1</span>$0"
+    },
+    "Insert floralwhite" : {
+        "prefix" : ["floralwhite"],
+        "body" : "<span style='color:floralwhite'>$1</span>$0"
+    },
+    "Insert forestgreen" : {
+        "prefix" : ["forestgreen"],
+        "body" : "<span style='color:forestgreen'>$1</span>$0"
+    },
+    "Insert fuchsia" : {
+        "prefix" : ["fuchsia"],
+        "body" : "<span style='color:fuchsia'>$1</span>$0"
+    },
+    "Insert gainsboro" : {
+        "prefix" : ["gainsboro"],
+        "body" : "<span style='color:gainsboro'>$1</span>$0"
+    },
+    "Insert ghostwhite" : {
+        "prefix" : ["ghostwhite"],
+        "body" : "<span style='color:ghostwhite'>$1</span>$0"
+    },
+    "Insert gold" : {
+        "prefix" : ["gold"],
+        "body" : "<span style='color:gold'>$1</span>$0"
+    },
+    "Insert goldenrod" : {
+        "prefix" : ["goldenrod"],
+        "body" : "<span style='color:goldenrod'>$1</span>$0"
+    },
+    "Insert gray" : {
+        "prefix" : ["gray"],
+        "body" : "<span style='color:gray'>$1</span>$0"
+    },
+    "Insert green" : {
+        "prefix" : ["green"],
+        "body" : "<span style='color:green'>$1</span>$0"
+    },
+    "Insert greenyellow" : {
+        "prefix" : ["greenyellow"],
+        "body" : "<span style='color:greenyellow'>$1</span>$0"
+    },
+    "Insert grey" : {
+        "prefix" : ["grey"],
+        "body" : "<span style='color:grey'>$1</span>$0"
+    },
+    "Insert honeydew" : {
+        "prefix" : ["honeydew"],
+        "body" : "<span style='color:honeydew'>$1</span>$0"
+    },
+    "Insert hotpink" : {
+        "prefix" : ["hotpink"],
+        "body" : "<span style='color:hotpink'>$1</span>$0"
+    },
+    "Insert indianred" : {
+        "prefix" : ["indianred"],
+        "body" : "<span style='color:indianred'>$1</span>$0"
+    },
+    "Insert indigo" : {
+        "prefix" : ["indigo"],
+        "body" : "<span style='color:indigo'>$1</span>$0"
+    },
+    "Insert ivory" : {
+        "prefix" : ["ivory"],
+        "body" : "<span style='color:ivory'>$1</span>$0"
+    },
+    "Insert khaki" : {
+        "prefix" : ["khaki"],
+        "body" : "<span style='color:khaki'>$1</span>$0"
+    },
+    "Insert lavender" : {
+        "prefix" : ["lavender"],
+        "body" : "<span style='color:lavender'>$1</span>$0"
+    },
+    "Insert lavenderblush" : {
+        "prefix" : ["lavenderblush"],
+        "body" : "<span style='color:lavenderblush'>$1</span>$0"
+    },
+    "Insert lawngreen" : {
+        "prefix" : ["lawngreen"],
+        "body" : "<span style='color:lawngreen'>$1</span>$0"
+    },
+    "Insert lemonchiffon" : {
+        "prefix" : ["lemonchiffon"],
+        "body" : "<span style='color:lemonchiffon'>$1</span>$0"
+    },
+    "Insert lightblue" : {
+        "prefix" : ["lightblue"],
+        "body" : "<span style='color:lightblue'>$1</span>$0"
+    },
+    "Insert lightcoral" : {
+        "prefix" : ["lightcoral"],
+        "body" : "<span style='color:lightcoral'>$1</span>$0"
+    },
+    "Insert lightcyan" : {
+        "prefix" : ["lightcyan"],
+        "body" : "<span style='color:lightcyan'>$1</span>$0"
+    },
+    "Insert lightgoldenrodyellow" : {
+        "prefix" : ["lightgoldenrodyellow"],
+        "body" : "<span style='color:lightgoldenrodyellow'>$1</span>$0"
+    },
+    "Insert lightgray" : {
+        "prefix" : ["lightgray"],
+        "body" : "<span style='color:lightgray'>$1</span>$0"
+    },
+    "Insert lightgreen" : {
+        "prefix" : ["lightgreen"],
+        "body" : "<span style='color:lightgreen'>$1</span>$0"
+    },
+    "Insert lightgrey" : {
+        "prefix" : ["lightgrey"],
+        "body" : "<span style='color:lightgrey'>$1</span>$0"
+    },
+    "Insert lightpink" : {
+        "prefix" : ["lightpink"],
+        "body" : "<span style='color:lightpink'>$1</span>$0"
+    },
+    "Insert lightsalmon" : {
+        "prefix" : ["lightsalmon"],
+        "body" : "<span style='color:lightsalmon'>$1</span>$0"
+    },
+    "Insert lightseagreen" : {
+        "prefix" : ["lightseagreen"],
+        "body" : "<span style='color:lightseagreen'>$1</span>$0"
+    },
+    "Insert lightskyblue" : {
+        "prefix" : ["lightskyblue"],
+        "body" : "<span style='color:lightskyblue'>$1</span>$0"
+    },
+    "Insert lightslategray" : {
+        "prefix" : ["lightslategray"],
+        "body" : "<span style='color:lightslategray'>$1</span>$0"
+    },
+    "Insert lightslategrey" : {
+        "prefix" : ["lightslategrey"],
+        "body" : "<span style='color:lightslategrey'>$1</span>$0"
+    },
+    "Insert lightsteelblue" : {
+        "prefix" : ["lightsteelblue"],
+        "body" : "<span style='color:lightsteelblue'>$1</span>$0"
+    },
+    "Insert lightyellow" : {
+        "prefix" : ["lightyellow"],
+        "body" : "<span style='color:lightyellow'>$1</span>$0"
+    },
+    "Insert lime" : {
+        "prefix" : ["lime"],
+        "body" : "<span style='color:lime'>$1</span>$0"
+    },
+    "Insert limegreen" : {
+        "prefix" : ["limegreen"],
+        "body" : "<span style='color:limegreen'>$1</span>$0"
+    },
+    "Insert linen" : {
+        "prefix" : ["linen"],
+        "body" : "<span style='color:linen'>$1</span>$0"
+    },
+    "Insert magenta" : {
+        "prefix" : ["magenta"],
+        "body" : "<span style='color:magenta'>$1</span>$0"
+    },
+    "Insert maroon" : {
+        "prefix" : ["maroon"],
+        "body" : "<span style='color:maroon'>$1</span>$0"
+    },
+    "Insert mediumaquamarine" : {
+        "prefix" : ["mediumaquamarine"],
+        "body" : "<span style='color:mediumaquamarine'>$1</span>$0"
+    },
+    "Insert mediumblue" : {
+        "prefix" : ["mediumblue"],
+        "body" : "<span style='color:mediumblue'>$1</span>$0"
+    },
+    "Insert mediumorchid" : {
+        "prefix" : ["mediumorchid"],
+        "body" : "<span style='color:mediumorchid'>$1</span>$0"
+    },
+    "Insert mediumpurple" : {
+        "prefix" : ["mediumpurple"],
+        "body" : "<span style='color:mediumpurple'>$1</span>$0"
+    },
+    "Insert mediumseagreen" : {
+        "prefix" : ["mediumseagreen"],
+        "body" : "<span style='color:mediumseagreen'>$1</span>$0"
+    },
+    "Insert mediumslateblue" : {
+        "prefix" : ["mediumslateblue"],
+        "body" : "<span style='color:mediumslateblue'>$1</span>$0"
+    },
+    "Insert mediumspringgreen" : {
+        "prefix" : ["mediumspringgreen"],
+        "body" : "<span style='color:mediumspringgreen'>$1</span>$0"
+    },
+    "Insert mediumturquoise" : {
+        "prefix" : ["mediumturquoise"],
+        "body" : "<span style='color:mediumturquoise'>$1</span>$0"
+    },
+    "Insert mediumvioletred" : {
+        "prefix" : ["mediumvioletred"],
+        "body" : "<span style='color:mediumvioletred'>$1</span>$0"
+    },
+    "Insert midnightblue" : {
+        "prefix" : ["midnightblue"],
+        "body" : "<span style='color:midnightblue'>$1</span>$0"
+    },
+    "Insert mintcream" : {
+        "prefix" : ["mintcream"],
+        "body" : "<span style='color:mintcream'>$1</span>$0"
+    },
+    "Insert mistyrose" : {
+        "prefix" : ["mistyrose"],
+        "body" : "<span style='color:mistyrose'>$1</span>$0"
+    },
+    "Insert moccasin" : {
+        "prefix" : ["moccasin"],
+        "body" : "<span style='color:moccasin'>$1</span>$0"
+    },
+    "Insert navajowhite" : {
+        "prefix" : ["navajowhite"],
+        "body" : "<span style='color:navajowhite'>$1</span>$0"
+    },
+    "Insert navy" : {
+        "prefix" : ["navy"],
+        "body" : "<span style='color:navy'>$1</span>$0"
+    },
+    "Insert oldlace" : {
+        "prefix" : ["oldlace"],
+        "body" : "<span style='color:oldlace'>$1</span>$0"
+    },
+    "Insert olive" : {
+        "prefix" : ["olive"],
+        "body" : "<span style='color:olive'>$1</span>$0"
+    },
+    "Insert olivedrab" : {
+        "prefix" : ["olivedrab"],
+        "body" : "<span style='color:olivedrab'>$1</span>$0"
+    },
+    "Insert orange" : {
+        "prefix" : ["orange"],
+        "body" : "<span style='color:orange'>$1</span>$0"
+    },
+    "Insert orangered" : {
+        "prefix" : ["orangered"],
+        "body" : "<span style='color:orangered'>$1</span>$0"
+    },
+    "Insert orchid" : {
+        "prefix" : ["orchid"],
+        "body" : "<span style='color:orchid'>$1</span>$0"
+    },
+    "Insert palegoldenrod" : {
+        "prefix" : ["palegoldenrod"],
+        "body" : "<span style='color:palegoldenrod'>$1</span>$0"
+    },
+    "Insert palegreen" : {
+        "prefix" : ["palegreen"],
+        "body" : "<span style='color:palegreen'>$1</span>$0"
+    },
+    "Insert paleturquoise" : {
+        "prefix" : ["paleturquoise"],
+        "body" : "<span style='color:paleturquoise'>$1</span>$0"
+    },
+    "Insert palevioletred" : {
+        "prefix" : ["palevioletred"],
+        "body" : "<span style='color:palevioletred'>$1</span>$0"
+    },
+    "Insert papayawhip" : {
+        "prefix" : ["papayawhip"],
+        "body" : "<span style='color:papayawhip'>$1</span>$0"
+    },
+    "Insert peachpuff" : {
+        "prefix" : ["peachpuff"],
+        "body" : "<span style='color:peachpuff'>$1</span>$0"
+    },
+    "Insert peru" : {
+        "prefix" : ["peru"],
+        "body" : "<span style='color:peru'>$1</span>$0"
+    },
+    "Insert pink" : {
+        "prefix" : ["pink"],
+        "body" : "<span style='color:pink'>$1</span>$0"
+    },
+    "Insert plum" : {
+        "prefix" : ["plum"],
+        "body" : "<span style='color:plum'>$1</span>$0"
+    },
+    "Insert powderblue" : {
+        "prefix" : ["powderblue"],
+        "body" : "<span style='color:powderblue'>$1</span>$0"
+    },
+    "Insert purple" : {
+        "prefix" : ["purple"],
+        "body" : "<span style='color:purple'>$1</span>$0"
+    },
+    "Insert red" : {
+        "prefix" : ["red"],
+        "body" : "<span style='color:red'>$1</span>$0"
+    },
+    "Insert rosybrown" : {
+        "prefix" : ["rosybrown"],
+        "body" : "<span style='color:rosybrown'>$1</span>$0"
+    },
+    "Insert royalblue" : {
+        "prefix" : ["royalblue"],
+        "body" : "<span style='color:royalblue'>$1</span>$0"
+    },
+    "Insert saddlebrown" : {
+        "prefix" : ["saddlebrown"],
+        "body" : "<span style='color:saddlebrown'>$1</span>$0"
+    },
+    "Insert salmon" : {
+        "prefix" : ["salmon"],
+        "body" : "<span style='color:salmon'>$1</span>$0"
+    },
+    "Insert sandybrown" : {
+        "prefix" : ["sandybrown"],
+        "body" : "<span style='color:sandybrown'>$1</span>$0"
+    },
+    "Insert seagreen" : {
+        "prefix" : ["seagreen"],
+        "body" : "<span style='color:seagreen'>$1</span>$0"
+    },
+    "Insert seashell" : {
+        "prefix" : ["seashell"],
+        "body" : "<span style='color:seashell'>$1</span>$0"
+    },
+    "Insert sienna" : {
+        "prefix" : ["sienna"],
+        "body" : "<span style='color:sienna'>$1</span>$0"
+    },
+    "Insert silver" : {
+        "prefix" : ["silver"],
+        "body" : "<span style='color:silver'>$1</span>$0"
+    },
+    "Insert skyblue" : {
+        "prefix" : ["skyblue"],
+        "body" : "<span style='color:skyblue'>$1</span>$0"
+    },
+    "Insert slateblue" : {
+        "prefix" : ["slateblue"],
+        "body" : "<span style='color:slateblue'>$1</span>$0"
+    },
+    "Insert slategray" : {
+        "prefix" : ["slategray"],
+        "body" : "<span style='color:slategray'>$1</span>$0"
+    },
+    "Insert slategrey" : {
+        "prefix" : ["slategrey"],
+        "body" : "<span style='color:slategrey'>$1</span>$0"
+    },
+    "Insert snow" : {
+        "prefix" : ["snow"],
+        "body" : "<span style='color:snow'>$1</span>$0"
+    },
+    "Insert springgreen" : {
+        "prefix" : ["springgreen"],
+        "body" : "<span style='color:springgreen'>$1</span>$0"
+    },
+    "Insert steelblue" : {
+        "prefix" : ["steelblue"],
+        "body" : "<span style='color:steelblue'>$1</span>$0"
+    },
+    "Insert tan" : {
+        "prefix" : ["tan"],
+        "body" : "<span style='color:tan'>$1</span>$0"
+    },
+    "Insert teal" : {
+        "prefix" : ["teal"],
+        "body" : "<span style='color:teal'>$1</span>$0"
+    },
+    "Insert thistle" : {
+        "prefix" : ["thistle"],
+        "body" : "<span style='color:thistle'>$1</span>$0"
+    },
+    "Insert tomato" : {
+        "prefix" : ["tomato"],
+        "body" : "<span style='color:tomato'>$1</span>$0"
+    },
+    "Insert turquoise" : {
+        "prefix" : ["turquoise"],
+        "body" : "<span style='color:turquoise'>$1</span>$0"
+    },
+    "Insert violet" : {
+        "prefix" : ["violet"],
+        "body" : "<span style='color:violet'>$1</span>$0"
+    },
+    "Insert wheat" : {
+        "prefix" : ["wheat"],
+        "body" : "<span style='color:wheat'>$1</span>$0"
+    },
+    "Insert white" : {
+        "prefix" : ["white"],
+        "body" : "<span style='color:white'>$1</span>$0"
+    },
+    "Insert whitesmoke" : {
+        "prefix" : ["whitesmoke"],
+        "body" : "<span style='color:whitesmoke'>$1</span>$0"
+    },
+    "Insert yellow" : {
+        "prefix" : ["yellow"],
+        "body" : "<span style='color:yellow'>$1</span>$0"
+    },
+    "Insert yellowgreen" : {
+        "prefix" : ["yellowgreen"],
+        "body" : "<span style='color:yellowgreen'>$1</span>$0"
+    },
+    "Insert 3x3 matrix" : {
+        "prefix" : ["bm3x3"],
+        "body" :["\\begin{bmatrix} $1 & $2 & $3 \\\\\\ $4 & $5 & $6 \\\\\\ $7 & $8 & $9 \\end{bmatrix} $0"]
+    },
+    "Insert 2x2 matrix" : {
+        "prefix" : ["bm2x2"],
+        "body" :["\\begin{bmatrix} $1 & $2 \\\\\\ $3 & $4 \\\\\\ \\end{bmatrix} $0"]
+    },
+    "Insert 1x3 matrix" : {
+        "prefix" : ["bm1x3"],
+        "body" :["\\begin{bmatrix} $1 & $2 & $3  \\end{bmatrix} $0"]
+    },
+    "Insert 1x2 matrix" : {
+        "prefix" : ["bm1x2"],
+        "body" :["\\begin{bmatrix} $1 & $2 \\end{bmatrix} $0"]
+    },
+    "Insert 2x1 matrix" : {
+        "prefix" : ["bm2x1"],
+        "body" :["\\begin{bmatrix} $1  \\\\\\ $2  \\\\\\ \\end{bmatrix} $0"]
+    },
+    "Insert 2x3 matrix" : {
+        "prefix" : ["bm2x3"],
+        "body" :["\\begin{bmatrix} $1 & $2 & $3  \\\\\\ $4 & $5 & $6 \\\\\\ \\end{bmatrix} $0"]
+    },
+    "Insert 3x2 matrix" : {
+        "prefix" : ["bm3x2"],
+        "body" :["\\begin{bmatrix} $1 & $2  \\\\\\ $3 & $4  \\\\\\ $5 & $6  \\end{bmatrix} $0"]
+    },
+    "Insert 3x1 matrix" : {
+        "prefix" : ["bm3x1"],
+        "body" :["\\begin{bmatrix} $1   \\\\\\ $2   \\\\\\ $3   \\end{bmatrix} $0"]
+    },
+    "Insert 4x4 matrix" : {
+        "prefix" : ["bm4x4"],
+        "body" :["\\begin{bmatrix} $1 & $2 & $3 & $4 \\\\\\ $5 & $6 & $7 & $8 \\\\\\ $9 & ${10} & ${11} & ${12} \\\\\\ ${13} & ${14} & ${15} & ${16} \\end{bmatrix} $0"]
+    },
+    "Insert det 4" : {
+        "prefix" : ["det4"],
+        "body" :["\\begin{vmatrix} $1 & $2 & $3 & $4 \\\\\\ $5 & $6 & $7 & $8 \\\\\\ $9 & ${10} & ${11} & ${12} \\\\\\ ${13} & ${14} & ${15} & ${16} \\end{vmatrix} $0"]
+    },
+    "Insert det 3" : {
+        "prefix" : ["det3"],
+        "body" :["\\begin{vmatrix} $1 & $2 & $3 \\\\\\ $4 & $5 & $6 \\\\\\ $7 & $8 & $9 \\end{vmatrix} $0"]
+    },
+    "Insert example" :{
+        "prefix" : ["ie"],
+        "body" : "<div class='callouts example'>\n<h2 class='title'>EXAMPLE : </h2>\n\n$1\n\n</div>$0"
+    },
+     "Insert tip" :{
+        "prefix" : ["t","tip"],
+        "body": "<div class='callouts tip'>\n<h2 class='title'>TIP✓</h2>\n\n$1\n\n</div>$0"
+    }
+}
