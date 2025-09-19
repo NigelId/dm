@@ -18,10 +18,10 @@ alias sch='search'
 alias yt='youtube'
 alias chrome='_chrome'
 
-alias ls='eza -lG --icons'
+alias ls='eza -G --icons'
 alias grep='grep --color=auto'
 alias vi='nvim'
-alias s@='source /home/dm/.bashrc'
+alias s@='source /home/nigel/.bashrc'
 alias gta='cd /mnt/c/Users/Admin/'
 alias lms="gurl 'lms.hcmut.edu.vn'"
 alias fb="gurl facebook.com"
@@ -38,6 +38,8 @@ alias stat='git status'
 alias diff='git diff'
 alias mit='git commit'
 alias add='git add'
+alias gaa='git add -A'
+alias empty='git commit --allow-empty'
 
 PS1='[\u@\h \W]\$ '
 

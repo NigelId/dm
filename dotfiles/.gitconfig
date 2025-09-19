@@ -1,0 +1,6 @@
+[user]
+	name = NigelId
+	email = suon568@gmail.com
+[core]
+	editor = nvim
+	autocrlf = input
