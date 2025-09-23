@@ -22,7 +22,7 @@ alias diff='git diff'
 alias mit='git commit'
 alias add='git add'
 alias gaa='git add -A'
-alias empty='git commit --allow-empty -m "" '
+alias empty='git commit -m "" --allow-empty '
 
 PS1='[\u@\h \W]\$ '
 
