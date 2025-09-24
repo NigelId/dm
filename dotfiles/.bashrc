@@ -36,3 +36,4 @@ eval "$(zoxide init bash --cmd cd)"
 
 test -z "$TMUX" && (tmux attach || tmux new-session) 
 # ln -sf  /mnt/wslg/runtime-dir/wayland-* $XDG_RUNTIME_DIR/
+export PATH=/usr/local/texlive/2025/bin/x86_64-linux:$PATH
