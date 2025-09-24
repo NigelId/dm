@@ -7,5 +7,5 @@ notes/*.tex
 *.synctex.gz
 *.toc
 _minted/
-dotfiles/Captures/
-dotfiles/Screenshots/
+dotfiles/Pictures/Captures/
+dotfiles/Pictures/Screenshots/
