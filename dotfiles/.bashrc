@@ -1,8 +1,14 @@
 #
 # ~/.bashrc
 #
-
 # If not running interactively, don't do anything
+
+if [ -n "$TMUX" ]; then
+    if [ "$(tmux show-option -qv @fastfetch_ran)" != "1" ]; then
+        fastfetch
+        tmux set-option -q @fastfetch_ran 1
+    fi
+fi
 [[ $- != *i* ]] && return
 
 PATH=$(printf %s "$PATH" | awk -vRS=: '!a[$0]++' | paste -s -d:)
@@ -33,6 +39,8 @@ eval "$(fzf --bash)"
 eval "$(zoxide init bash --cmd cd)"
 
 [[ -f "/home/nigel/.modules" ]] && source "/home/nigel/.modules"
+
+eval "$(ssh-agent -s)" > /dev/null
 
 test -z "$TMUX" && (tmux attach || tmux new-session) 
 
