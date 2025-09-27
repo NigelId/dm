@@ -2,7 +2,7 @@
 
 function mvmac() {
   [[ "${#}" -eq 0 ]] && echo "No path selected" && return 1
-    cp ""/home/dm/latex/latex_template/{letterfonts.tex,macros.tex,preamble.tex,template.tex,vntex.tex} "${1}"
+    cp ""/home/nigel/dm/latex/latex_template/{letterfonts.tex,macros.tex,preamble.tex,template.tex,vntex.tex} "${1}"
 }
 
 function view(){

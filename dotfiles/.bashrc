@@ -23,7 +23,7 @@ alias mit='git commit'
 alias add='git add'
 alias gaa='git add -A'
 alias empty='git commit --allow-empty-message -m "" '
-
+alias yz='yazi'
 PS1='[\u@\h \W]\$ '
 
 export MANPAGER="nvim +Man!"
@@ -35,5 +35,6 @@ eval "$(zoxide init bash --cmd cd)"
 [[ -f "/home/nigel/.modules" ]] && source "/home/nigel/.modules"
 
 test -z "$TMUX" && (tmux attach || tmux new-session) 
-# ln -sf  /mnt/wslg/runtime-dir/wayland-* $XDG_RUNTIME_DIR/
+
 export PATH=/usr/local/texlive/2025/bin/x86_64-linux:$PATH
+complete -cf sudo

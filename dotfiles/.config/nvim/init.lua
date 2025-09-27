@@ -20,6 +20,8 @@ require "polish"
 
 vim.opt.termguicolors = true
 vim.g.tex_flavor = "latex"
+vim.g.vimtex_view_method = "zathura"
+vim.g.vimtex_view_forward_search_on_start = 1
 
 require "keymaps"
 
