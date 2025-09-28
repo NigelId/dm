@@ -46,3 +46,5 @@ test -z "$TMUX" && (tmux attach || tmux new-session)
 
 export PATH=/usr/local/texlive/2025/bin/x86_64-linux:$PATH
 complete -cf sudo
+complete -cf man
+rfkill unblock all

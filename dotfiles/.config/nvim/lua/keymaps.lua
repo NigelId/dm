@@ -14,3 +14,7 @@ end)
 vim.keymap.set("v", "<F3>", ":CBalbox<cr>", { silent = true })
 vim.keymap.set("n", "<leader>tt", ":ToggleTerm<cr>", { desc = "toggle terminal" })
 vim.keymap.set("n", "vv", "<C-v>")
+vim.keymap.set("n", "<leader>zi", function()
+  vim.api.nvim_command "VietnameseToggle"
+  vim.cmd "startinsert"
+end, { silent = true })
