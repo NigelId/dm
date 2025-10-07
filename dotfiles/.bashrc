@@ -3,12 +3,7 @@
 #
 # If not running interactively, don't do anything
 
-if [ -n "$TMUX" ]; then
-    if [ "$(tmux show-option -qv @fastfetch_ran)" != "1" ]; then
-        fastfetch
-        tmux set-option -q @fastfetch_ran 1
-    fi
-fi
+
 [[ $- != *i* ]] && return
 
 PATH=$(printf %s "$PATH" | awk -vRS=: '!a[$0]++' | paste -s -d:)
@@ -42,7 +37,14 @@ eval "$(zoxide init bash --cmd cd)"
 
 eval "$(ssh-agent -s)" > /dev/null
 
-test -z "$TMUX" && (tmux attach || tmux new-session) 
+# test -z "$TMUX" && (tmux attach || tmux new-session)
+
+if [ -n "$TMUX" ]; then
+    if [ "$(tmux show-option -qv @fastfetch_ran)" != "1" ]; then
+        fastfetch
+        tmux set-option -q @fastfetch_ran 1
+    fi
+fi
 
 export PATH=/usr/local/texlive/2025/bin/x86_64-linux:$PATH
 complete -cf sudo
