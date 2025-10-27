@@ -17,15 +17,17 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
 		vim.hl.on_yank({
 			higroup = "IncSearch",
-			timeout = 100,
 		})
 	end,
 })
 
+local dashboard = vim.api.nvim_create_augroup("dashboard", {})
+
 vim.api.nvim_create_autocmd("BufEnter", {
+	group = dashboard,
 	callback = function()
-		if vim.fn.expand("%") == "" or vim.bo.filetype == "" then
-			vim.keymap.set("n", "x", function()
+		if vim.fn.expand("%") == "" and vim.bo.filetype == "" then
+			vim.keymap.set("n", "s", function()
 				local last = vim.v.oldfiles[1]
 				vim.cmd("edit " .. vim.fn.fnameescape(last))
 			end, { buffer = true, desc = "Open last opened file" })
@@ -36,5 +38,15 @@ vim.api.nvim_create_autocmd("BufEnter", {
 				require("fzf-lua").oldfiles()
 			end, { buffer = true, desc = "Find old files" })
 		end
+	end,
+})
+
+local markdown = vim.api.nvim_create_augroup("markdown", {})
+
+vim.api.nvim_create_autocmd("FileType", {
+	group = markdown,
+	pattern = "markdown",
+	callback = function()
+		require("luasnip.loaders.from_vscode").lazy_load({})
 	end,
 })

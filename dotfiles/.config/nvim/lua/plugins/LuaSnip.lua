@@ -13,14 +13,10 @@ return {
 			enable_autosnippets = true,
 		})
 
-		-- require("luasnip.loaders.from_vscode").lazy_load({
-		-- 	exclude = { "javascript", "typescript" },
-		-- })
-
 		require("luasnip.loaders.from_lua").lazy_load({ paths = vim.fn.stdpath("config") .. "/lua/config/snippets/" })
 
-		vim.keymap.set("i", "<Tab>", function()
-			ls.expand()
+		vim.keymap.set({ "i", "s" }, "<Tab>", function()
+			ls.jump(1)
 		end, { silent = true })
 	end,
 }

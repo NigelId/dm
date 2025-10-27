@@ -17,17 +17,84 @@ return {
 	-- 	trig = "pp",
 	-- 	snippetType = "autosnippet",
 	-- }, fmta("std::cout<< <> ;", i(1, "args"))),
-
 	s(
-		{ trig = "pp", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-		fmta("std::cout<< <>  ;", i(1, "args"))
+		{ trig = "main ", snippetType = "autosnippet" },
+		fmta(
+			[[
+            int main (int argc, char *argv[])
+            {
+               <>
+               return 0;
+            }
+      ]],
+			i(1)
+		)
+	),
+	s({ trig = "pp", snippetType = "autosnippet" }, fmta("std::cout<< <>  ;", i(1, "args"))),
+	s({ trig = "pn", snippetType = "autosnippet" }, fmta("std::cout<< <> << '\\n' ;", i(1, "args"))),
+	s(
+		{ trig = "([%w_]+)vec ", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+		f(function(_, snip)
+			return "std::vector<" .. snip.captures[1] .. ">"
+		end, i(0))
+	),
+	s({ trig = "vec ", snippetType = "autosnippet" }, fmta("std::vector<<<>>>", i(1, "Typename T"))),
+	s(
+		{ trig = "([%w_]+)class ", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+		fmta(
+			[[
+      class <>
+      {
+         <>
+      };
+      ]],
+			{
+				f(function(_, snip)
+					return snip.captures[1]
+				end),
+				i(1),
+			}
+		)
 	),
 	s(
-		{ trig = "pn", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-		fmta("std::cout<< <> << '\\n' ;", i(1, "args"))
+		{ trig = "class", snippetType = "autosnippet" },
+		fmta(
+			[[
+      class <>
+      {
+         <>
+      };
+      ]],
+			{ i(1, "Class"), i(2) }
+		)
 	),
 	s(
-		{ trig = "dant", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-		fmta("std::vector<<<>>>", i(1, "Typename T"))
+		{ trig = "struc", snippetType = "autosnippet" },
+		fmta(
+			[[
+      struct <>
+      {
+         <>
+      };
+      ]],
+			{ i(1, "Struct"), i(2) }
+		)
+	),
+	s(
+		{ trig = "([%w_]+)struc ", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+		fmta(
+			[[
+      struct <>
+      {
+         <>
+      };
+      ]],
+			{
+				f(function(_, snip)
+					return snip.captures[1]
+				end),
+				i(1),
+			}
+		)
 	),
 }

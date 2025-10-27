@@ -23,10 +23,10 @@ vim.keymap.set("n", "<C-n>", ":bprevious<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sh", ":split<CR>", { desc = "Split window horizontally" })
 
-vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", { desc = "Increase window height" })
-vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", { desc = "Decrease window height" })
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
-vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Increase window width" })
+vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", { desc = "Increase window height" })
+vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", { desc = "Decrease window height" })
+vim.keymap.set("n", "<C-Left>", ":vertical resize +2<CR>", { desc = "Decrease window width" })
+vim.keymap.set("n", "<C-Right>", ":vertical resize -2<CR>", { desc = "Increase window width" })
 
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Increase window width" })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
@@ -35,6 +35,9 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Open parent directory" })
 
 vim.keymap.set({ "i", "v", "n" }, "<Esc>", function()
 	vim.cmd("nohlsearch")
-	vim.cmd('echo ""') -- clears the command-line prompt
 	return vim.api.nvim_replace_termcodes("<Esc>", true, false, true)
 end, { expr = true, noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>tt", ":ToggleTerm direction=horizontal size=10<CR>", { desc = "Opening Terminal" })
+
+vim.keymap.set("n", "<leader>tv", ":ToggleTerm direction=vertical<CR>", { desc = "Opening Terminal" })

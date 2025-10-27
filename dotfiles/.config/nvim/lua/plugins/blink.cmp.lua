@@ -2,7 +2,6 @@ return {
 	"saghen/blink.cmp",
 	-- optional: provides snippets for the snippet source
 	dependencies = { "L3MON4D3/LuaSnip" },
-
 	event = { "BufReadPre", "BufNewFile" },
 
 	version = "1.*",
@@ -75,6 +74,9 @@ return {
 
 		sources = {
 			default = { "lsp", "path", "buffer" },
+			per_filetype = {
+				markdown = { "lsp", "path", "buffer", "snippets" },
+			},
 		},
 
 		fuzzy = { implementation = "prefer_rust_with_warning" },

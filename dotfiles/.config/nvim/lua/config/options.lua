@@ -39,13 +39,13 @@ vim.opt.selection = "inclusive"
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.modifiable = true
 vim.opt.encoding = "UTF-8"
-
+vim.opt.timeoutlen = 400
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-
+vim.opt.laststatus = 3
 vim.opt.lazyredraw = true
 vim.opt.redrawtime = 10000
-vim.opt.synmaxcol = 240
+vim.opt.synmaxcol = 300
 
 -- file
 vim.opt.backup = false
@@ -65,4 +65,3 @@ vim.opt.undodir = undo_dir
 if vim.fn.isdirectory(undo_dir) == false then
 	vim.fn.mkdir(undo_dir, "p")
 end
-vim.opt.laststatus = 3

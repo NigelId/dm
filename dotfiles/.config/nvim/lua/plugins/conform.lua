@@ -7,6 +7,7 @@ return {
 			cpp = { "clang-format" },
 			c = { "clang-format" },
 			python = { "isort", "black" },
+			cmake = { "gersemi" },
 			-- You can customize some of the format options for the filetype (:help conform.format)
 			rust = { "rustfmt" },
 		},

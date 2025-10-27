@@ -1,11 +1,11 @@
+---@diagnostic disable
+
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
-	event = { "BufReadPre", "BufNewFile" },
+	event = { "BufReadPost", "BufNewFile" },
 	lazy = false,
-	dependencies = {
-		"nvim-treesitter/nvim-treesitter-textobjects",
-	},
+	dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			-- language parsers that MUST be installed
@@ -27,11 +27,15 @@ return {
 				"typescript",
 				"yaml",
 			},
-			auto_install = true, -- auto-install any other parsers on opening new language files
+			auto_install = false, -- auto-install any other parsers on opening new language files
 			sync_install = true,
 			highlight = {
 				enable = true,
 				additional_vim_regex_highlighting = false,
+				disable = {
+					"cpp",
+					"c",
+				},
 			},
 			indent = { enable = true },
 			incremental_selection = {
