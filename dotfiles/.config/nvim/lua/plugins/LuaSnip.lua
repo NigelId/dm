@@ -10,7 +10,13 @@ return {
 	config = function()
 		local ls = require("luasnip")
 		ls.setup({
-			enable_autosnippets = true,
+			enable_autosnippets = false,
+		})
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = { "cpp", "c", "lua" },
+			callback = function()
+				ls.config.set_config({ enable_autosnippets = true })
+			end,
 		})
 
 		require("luasnip.loaders.from_lua").lazy_load({ paths = vim.fn.stdpath("config") .. "/lua/config/snippets/" })

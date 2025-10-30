@@ -58,6 +58,8 @@ vim.opt.autowrite = false
 vim.opt.virtualedit = "block"
 vim.opt.confirm = true
 
+vim.cmd([["colorscheme quiet"]])
+
 local undo_dir = vim.fn.expand("~/.local/share/nvim/undo/")
 
 vim.opt.undodir = undo_dir

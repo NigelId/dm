@@ -4,7 +4,7 @@ return {
 	event = "UiEnter",
 	opts = {
 		options = {
-			theme = "gruvbox",
+			theme = "everforest",
 		},
 	},
 }

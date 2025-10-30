@@ -34,7 +34,7 @@ require("lazy").setup({
 
 	install = { colorscheme = { "default" } },
 
-	checker = { enabled = true },
+	checker = { enabled = false },
 
 	ui = { backdrop = 100 },
 

@@ -2,13 +2,20 @@ return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 
-	opts = {},
-
+	opts = {
+		"max-perf",
+		fzf_colors = {
+			["gutter"] = { "bg", "PmenuSbar" },
+		},
+		winopts = {
+			fullscreen = true,
+		},
+	},
 	keys = {
 		{
 			"<leader>ff",
 			function()
-				require("fzf-lua").files()
+				require("fzf-lua").files({})
 			end,
 			desc = "Find files in cwd",
 		},

@@ -30,8 +30,9 @@ return {
 			i(1)
 		)
 	),
-	s({ trig = "pp", snippetType = "autosnippet" }, fmta("std::cout<< <>  ;", i(1, "args"))),
-	s({ trig = "pn", snippetType = "autosnippet" }, fmta("std::cout<< <> << '\\n' ;", i(1, "args"))),
+	s({ trig = "pp", snippetType = "autosnippet" }, fmta("std::cout<<<< <>  ;", i(1, "args"))),
+	s({ trig = "pn", snippetType = "autosnippet" }, fmta("std::cout<<<< <> <<<< '\\n' ;", i(1, "args"))),
+
 	s(
 		{ trig = "([%w_]+)vec ", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
 		f(function(_, snip)

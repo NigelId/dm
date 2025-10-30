@@ -41,3 +41,9 @@ end, { expr = true, noremap = true, silent = true })
 vim.keymap.set("n", "<leader>tt", ":ToggleTerm direction=horizontal size=10<CR>", { desc = "Opening Terminal" })
 
 vim.keymap.set("n", "<leader>tv", ":ToggleTerm direction=vertical<CR>", { desc = "Opening Terminal" })
+vim.keymap.set("n", "<leader>ap", ":e ~/.config/nvim/lua/plugins/", { desc = "add-plugins" })
+
+vim.keymap.set("n", "<leader>zi", function()
+	vim.api.nvim_command("VietnameseToggle")
+	vim.cmd("startinsert")
+end, { silent = true })
