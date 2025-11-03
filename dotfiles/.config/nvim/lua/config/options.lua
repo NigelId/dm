@@ -43,7 +43,7 @@ vim.opt.timeoutlen = 400
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.laststatus = 3
-vim.opt.lazyredraw = true
+-- vim.opt.lazyredraw = true
 vim.opt.redrawtime = 10000
 vim.opt.synmaxcol = 300
 
@@ -57,7 +57,6 @@ vim.opt.autoread = true
 vim.opt.autowrite = false
 vim.opt.virtualedit = "block"
 vim.opt.confirm = true
-
 vim.cmd([["colorscheme quiet"]])
 
 local undo_dir = vim.fn.expand("~/.local/share/nvim/undo/")

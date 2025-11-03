@@ -188,3 +188,7 @@ symbol = " "
 
 [gradle]
 symbol = " "
+
+[character]
+success_symbol = '[❯](bold green)'
+

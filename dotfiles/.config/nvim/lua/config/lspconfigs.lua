@@ -1,10 +1,14 @@
-local servers = { "lua_ls", "clangd", "cmake" }
+local servers = { "lua_ls", "clangd", "cmake", "bashls" }
 
 vim.lsp.enable(servers)
 
 vim.diagnostic.config({
 	virtual_text = true,
 	signs = false,
+})
+
+vim.lsp.config("bashls", {
+	filetypes = { "bash", "zsh" },
 })
 
 vim.api.nvim_create_autocmd("InsertEnter", {

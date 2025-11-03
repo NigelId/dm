@@ -3,12 +3,9 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 
 	opts = {
-		"max-perf",
+		-- "max-perf",
 		fzf_colors = {
 			["gutter"] = { "bg", "PmenuSbar" },
-		},
-		winopts = {
-			fullscreen = true,
 		},
 	},
 	keys = {
