@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 -- leader
 vim.g.maplocalleader = " "
 -- keymaps
+
 vim.opt.guicursor = "n-v-c-sm:block,i-ci:ver25-Cursor,r-cr-o:hor20"
 
 vim.keymap.set("n", "<leader>w", ":write<CR>", { desc = "write buffer to file", silent = true })
@@ -25,10 +26,10 @@ vim.keymap.set("n", "<M-b>", ":bprevious<CR>", { desc = "Previous buffer", silen
 vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sh", ":split<CR>", { desc = "Split window horizontally" })
 
-vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", { desc = "Increase window height" })
-vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", { desc = "Decrease window height" })
-vim.keymap.set("n", "<C-Left>", ":vertical resize +2<CR>", { desc = "Decrease window width" })
-vim.keymap.set("n", "<C-Right>", ":vertical resize -2<CR>", { desc = "Increase window width" })
+vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", { desc = "Increase window height", silent = true })
+vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", { desc = "Decrease window height", silent = true })
+vim.keymap.set("n", "<C-Left>", ":vertical resize +2<CR>", { desc = "Decrease window width", silent = true })
+vim.keymap.set("n", "<C-Right>", ":vertical resize -2<CR>", { desc = "Increase window width", silent = true })
 
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up centering" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down centering" })
@@ -48,12 +49,27 @@ vim.keymap.set({ "i", "v", "n" }, "<Esc>", function()
 	return vim.api.nvim_replace_termcodes("<Esc>", true, false, true)
 end, { expr = true, noremap = true, silent = true })
 
--- vim.keymap.set("n", "<leader>tt", ":ToggleTerm direction=horizontal size=10<CR>", { desc = "Opening Terminal" })
-
--- vim.keymap.set("n", "<leader>tv", ":ToggleTerm direction=vertical<CR>", { desc = "Opening Terminal" })
 vim.keymap.set("n", "<leader>ap", ":e ~/.config/nvim/lua/plugins/", { desc = "add-plugins" })
 
 vim.keymap.set("n", "<leader>zi", function()
 	vim.api.nvim_command("VietnameseToggle")
 	vim.cmd("startinsert")
 end, { silent = true })
+
+vim.keymap.set("n", "<leader>tt", function()
+	vim.cmd("te")
+end, { desc = "open terminal" })
+
+vim.keymap.set("n", "<leader>th", function()
+	vim.cmd("sp")
+	vim.cmd("te")
+	vim.cmd("startinsert")
+	vim.api.nvim_win_set_height(0, 12)
+end, { desc = "horizontal split terminal" })
+
+vim.keymap.set("n", "<leader>tv", function()
+	vim.cmd("vsp")
+	vim.cmd("te")
+	vim.cmd("startinsert")
+	vim.api.nvim_win_set_width(0, math.ceil(vim.api.nvim_win_get_width(0) * 0.94))
+end, { desc = "vertical split terminal" })
