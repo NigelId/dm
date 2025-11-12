@@ -1,6 +1,6 @@
 return {
 	"abecodes/tabout.nvim",
-	priority = 1000,
+	event = "VeryLazy",
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 		"L3MON4D3/LuaSnip",

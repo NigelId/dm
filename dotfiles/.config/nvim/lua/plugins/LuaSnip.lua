@@ -13,7 +13,7 @@ return {
 			enable_autosnippets = false,
 		})
 		vim.api.nvim_create_autocmd("FileType", {
-			pattern = { "cpp", "c", "lua" },
+			pattern = { "cpp", "c", "lua", "sh", "org" },
 			callback = function()
 				ls.config.set_config({ enable_autosnippets = true })
 			end,

@@ -33,15 +33,17 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize -2<CR>", { desc = "Increase w
 
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up centering" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down centering" })
-vim.keymap.set("n", "<M-u>", "<C-u>zz", { desc = "Half page up centering" })
-vim.keymap.set("n", "<M-d>", "<C-d>zz", { desc = "Half page up centering" })
+vim.keymap.set({ "n", "v" }, "<M-u>", "<C-u>zz", { desc = "Half page up centering" })
+vim.keymap.set({ "n", "v" }, "<M-d>", "<C-d>zz", { desc = "Half page down centering" })
+
+vim.keymap.set("n", "<M-o>", "<C-o>zz")
+vim.keymap.set("n", "<M-i>", "<C-i>zz")
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 vim.keymap.set({ "n", "v" }, "<M-f>", ":", { desc = "faster shortcut for command mode" })
 vim.keymap.set({ "n", "v" }, "<M-w>", "/", { desc = "faster shortcut for forward searching" })
 vim.keymap.set({ "n", "v" }, "<M-q>", "?", { desc = "faster shortcut for reverse searching" })
-vim.keymap.set("n", "<M-r>", "<C-r>", { desc = "faster shortcut for CTRL-R" })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Open parent directory" })
 
 vim.keymap.set({ "i", "v", "n" }, "<Esc>", function()
@@ -56,20 +58,6 @@ vim.keymap.set("n", "<leader>zi", function()
 	vim.cmd("startinsert")
 end, { silent = true })
 
-vim.keymap.set("n", "<leader>tt", function()
-	vim.cmd("te")
-end, { desc = "open terminal" })
-
-vim.keymap.set("n", "<leader>th", function()
-	vim.cmd("sp")
-	vim.cmd("te")
-	vim.cmd("startinsert")
-	vim.api.nvim_win_set_height(0, 12)
-end, { desc = "horizontal split terminal" })
-
-vim.keymap.set("n", "<leader>tv", function()
-	vim.cmd("vsp")
-	vim.cmd("te")
-	vim.cmd("startinsert")
-	vim.api.nvim_win_set_width(0, math.ceil(vim.api.nvim_win_get_width(0) * 0.94))
-end, { desc = "vertical split terminal" })
+vim.keymap.set("n", "<leader>tt", ":ToggleTerm direction=horizontal size=11<cr>", { desc = "open terminal" })
+vim.keymap.set("n", "<leader>tf", ":ToggleTerm direction=float<cr>", { desc = "floating terminal" })
+vim.keymap.set("n", "<leader>tv", ":ToggleTerm direction=vertical size=60<cr>", { desc = "vertical split terminal" })

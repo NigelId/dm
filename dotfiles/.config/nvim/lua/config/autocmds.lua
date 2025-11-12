@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	pattern = "*",
 	callback = function()
 		vim.hl.on_yank({
-			higroup = "IncSearch",
+			higroup = "Visual",
 		})
 	end,
 })
@@ -26,18 +26,23 @@ local dashboard = vim.api.nvim_create_augroup("dashboard", {})
 vim.api.nvim_create_autocmd("BufEnter", {
 	group = dashboard,
 	callback = function()
-		if vim.fn.expand("%") == "" and vim.bo.filetype == "" then
-			vim.keymap.set("n", "s", function()
-				local last = vim.v.oldfiles[1]
-				vim.cmd("edit " .. vim.fn.fnameescape(last))
-			end, { buffer = true, desc = "Open last opened file" })
-			vim.keymap.set("n", "f", function()
-				require("fzf-lua").files()
-			end, { buffer = true, desc = "Find files in cwd" })
-			vim.keymap.set("n", "o", function()
-				require("fzf-lua").oldfiles()
-			end, { buffer = true, desc = "Find old files" })
-		end
+		vim.schedule(function()
+			if vim.fn.expand("%") == "" and vim.bo.filetype == "" and vim.bo.buftype ~= "terminal" then
+				vim.keymap.set("n", "s", function()
+					local last = vim.v.oldfiles[1]
+					vim.cmd("edit " .. vim.fn.fnameescape(last))
+				end, { buffer = true, desc = "Open last opened file" })
+				vim.keymap.set("n", "f", function()
+					require("fzf-lua").files()
+				end, { buffer = true, desc = "Find files in cwd" })
+				vim.keymap.set("n", "o", function()
+					require("fzf-lua").oldfiles()
+				end, { buffer = true, desc = "Find old files" })
+				vim.keymap.set("n", "c", function()
+					require("fzf-lua").files({ cwd = vim.fn.stdpath("config") })
+				end, { buffer = true, desc = "Find config files" })
+			end
+		end)
 	end,
 })
 
@@ -50,3 +55,13 @@ vim.api.nvim_create_autocmd("FileType", {
 		require("luasnip.loaders.from_vscode").lazy_load({})
 	end,
 })
+
+vim.api.nvim_create_user_command("SetLightMode", function()
+	vim.opt.background = "light"
+	vim.cmd("colorscheme retrobox")
+end, {})
+
+vim.api.nvim_create_user_command("SetDarkMode", function()
+	vim.opt.background = "dark"
+	require("config.colorscheme").set_hl()
+end, {})

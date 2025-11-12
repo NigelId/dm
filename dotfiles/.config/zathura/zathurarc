@@ -38,3 +38,4 @@ set highlight-active-color    rgba(136,57,239,0.3)
 
 set selection-clipboard clipboard
 set font "JetBrains Mono Nerd Font 12"
+set guioptions none

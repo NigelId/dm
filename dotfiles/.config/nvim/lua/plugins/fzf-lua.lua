@@ -51,5 +51,37 @@ return {
 			end,
 			desc = "Find defined keymaps",
 		},
+		{
+			"<leader>fr",
+			function()
+				require("fzf-lua").files({ cwd = vim.fn.expand("~") })
+			end,
+			desc = "Find files in root",
+		},
+		{
+			"<leader>fbt",
+			function()
+				require("fzf-lua").treesitter()
+			end,
+			desc = "find treesitter symbols in buffer",
+		},
+		{
+			"<leader>fbf",
+			function()
+				require("fzf-lua").treesitter({
+					query = "[function]",
+				})
+			end,
+			desc = "find function by treesitter in current buffer",
+		},
+		{
+			"<leader>fg",
+			function()
+				require("fzf-lua").treesitter({
+					query = "[function]",
+				})
+			end,
+			desc = "find function by treesitter in current buffer",
+		},
 	},
 }

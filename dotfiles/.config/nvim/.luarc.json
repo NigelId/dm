@@ -8,6 +8,5 @@
   "workspace.checkThirdParty": false,
   "workspace.library": [
     "$VIMRUNTIME",
-    "$HOME/.local/share/nvim/lazy"
   ]
 }
