@@ -3,10 +3,10 @@
 
 return {
 	s(
-		{ trig = "shebang ", snippetType = "autosnippet" },
+		{ trig = "bash ", snippetType = "autosnippet" },
 		fmta(
 			[[
-      #!/usr/bin/bash
+      #!/usr/bin/env bash
       <>
           ]],
 			i(0)
