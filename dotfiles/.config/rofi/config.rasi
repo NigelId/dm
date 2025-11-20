@@ -1,0 +1,80 @@
+configuration {
+  display-drun: "run:";
+  display-window: "Windows:";
+  drun-display-format: "{name}";
+  font: "JetBrainsMono Nerd Font Extra Bold 16";
+  modi: "window,run,drun";
+}
+
+@theme "/dev/null"
+
+* {
+  bg: #14161b;
+  fg: #ebddb2;
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0; 
+}
+
+window {
+  width: 40%;
+  background-color: @bg;
+  border: 2px solid;  
+  border-color : @fg;
+}
+
+element {
+  padding:0 12;
+  background-color: @bg;
+  text-color: @fg;
+}
+
+element selected {
+  text-color: #14161b;       /* invert text */
+  background-color: #ebddb2; /* invert bg   */
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: 14;
+  padding: 0 10 0 0;
+  background-color: inherit;
+}
+
+entry {
+ padding: 4 0 8 17;
+  background-color: @bg;
+  text-color: @fg;
+  cursor-width :0;
+}
+
+inputbar {
+  children: [prompt, entry];
+  background-color: @bg;
+}
+
+listview {
+  background-color: @bg;
+  columns: 1;
+  lines: 10;
+  padding: 0px 8px 8px 64px;   
+}
+
+mainbox {
+  children: [inputbar, listview];
+  background-color: @bg;
+}
+
+prompt {
+  enabled: true;
+  padding: 4 0 8 12 ;
+  background-color: @bg;
+  text-color: @fg;
+}
