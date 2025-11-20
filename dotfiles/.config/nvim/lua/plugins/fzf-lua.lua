@@ -31,13 +31,6 @@ return {
 			desc = "Find old files",
 		},
 		{
-			"<leader>fb",
-			function()
-				require("fzf-lua").buffers()
-			end,
-			desc = "Find buffers",
-		},
-		{
 			"<leader>fc",
 			function()
 				require("fzf-lua").files({ cwd = vim.fn.stdpath("config") })
@@ -59,26 +52,17 @@ return {
 			desc = "Find files in root",
 		},
 		{
-			"<leader>fbt",
+			"<leader>bt",
 			function()
 				require("fzf-lua").treesitter()
 			end,
 			desc = "find treesitter symbols in buffer",
 		},
 		{
-			"<leader>fbf",
+			"<leader>bf",
 			function()
 				require("fzf-lua").treesitter({
-					query = "[function]",
-				})
-			end,
-			desc = "find function by treesitter in current buffer",
-		},
-		{
-			"<leader>fg",
-			function()
-				require("fzf-lua").treesitter({
-					query = "[function]",
+					query = "[function] ",
 				})
 			end,
 			desc = "find function by treesitter in current buffer",

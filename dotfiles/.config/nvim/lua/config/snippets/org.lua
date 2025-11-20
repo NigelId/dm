@@ -6,9 +6,9 @@ return {
 		{ trig = "src ", snippetType = "autosnippet" },
 		fmta(
 			[[
-         #+BEGIN_SRC <>
+         #+begin_src <>
               <>
-         #+END_SRC 
+         #+end_src 
          ]],
 			{ i(1, "lang"), i(0) }
 		)

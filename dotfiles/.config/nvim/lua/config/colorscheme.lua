@@ -44,6 +44,7 @@ function M.set_hl()
 	vim.api.nvim_set_hl(0, "Comment", { fg = "#928374" })
 	vim.api.nvim_set_hl(0, "PmenuSel", { fg = "#242424", bg = "#83a598" })
 	vim.api.nvim_set_hl(0, "Pmenu", { bg = "#14161b" })
+	vim.api.nvim_set_hl(0, "Identifier", { fg = "#99b7cf" })
 	--
 	vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#fb4934", bg = "#14161b" })
 	vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { fg = "#fabd2f", bg = "#14161b" })
