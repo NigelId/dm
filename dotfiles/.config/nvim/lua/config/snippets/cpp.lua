@@ -32,14 +32,6 @@ return {
 	),
 	s({ trig = "pp", snippetType = "autosnippet" }, fmta("std::cout<<<< <>  ;", i(1, "args"))),
 	s({ trig = "pn", snippetType = "autosnippet" }, fmta("std::cout<<<< <> <<<< '\\n' ;", i(1, "args"))),
-
-	s(
-		{ trig = "([%w_]+)vec ", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-		f(function(_, snip)
-			return "std::vector<" .. snip.captures[1] .. ">"
-		end, i(0))
-	),
-	s({ trig = "vec ", snippetType = "autosnippet" }, fmta("std::vector<<<>>>", i(1, "Typename T"))),
 	s(
 		{ trig = "([%w_]+)class ", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
 		fmta(

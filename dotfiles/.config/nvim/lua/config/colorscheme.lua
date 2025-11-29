@@ -48,6 +48,9 @@ function M.set_hl()
 	--
 	vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#fb4934", bg = "#14161b" })
 	vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { fg = "#fabd2f", bg = "#14161b" })
+	-- winbar stuff
+	vim.api.nvim_set_hl(0, "Winbar", { fg = "#f1e5c9", bg = "#14161b" })
+	vim.api.nvim_set_hl(0, "WinbarNC", { fg = "#f1e5c9", bg = "#14161b" })
 end
 
 return M

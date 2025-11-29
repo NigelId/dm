@@ -56,12 +56,17 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-vim.api.nvim_create_user_command("SetLightMode", function()
-	vim.opt.background = "light"
-	vim.cmd("colorscheme retrobox")
-end, {})
-
-vim.api.nvim_create_user_command("SetDarkMode", function()
-	vim.opt.background = "dark"
-	require("config.colorscheme").set_hl()
-end, {})
+vim.api.nvim_create_autocmd("BufWinEnter", {
+	group = vim.api.nvim_create_augroup("winbar", {}),
+	pattern = "*",
+	callback = function()
+		local filetype = vim.bo.filetype
+		if filetype == "" or filetype == "toggleterm" or filetype == "oil" then
+			return
+		end
+		if vim.api.nvim_win_get_config(0).relative ~= "" then
+			return
+		end
+		vim.wo.winbar = "%f"
+	end,
+})

@@ -52,20 +52,34 @@ return {
 			desc = "Find files in root",
 		},
 		{
-			"<leader>bt",
+			"<leader>ft",
 			function()
 				require("fzf-lua").treesitter()
 			end,
 			desc = "find treesitter symbols in buffer",
 		},
 		{
-			"<leader>bf",
+			"<leader>fg",
 			function()
 				require("fzf-lua").treesitter({
 					query = "[function] ",
 				})
 			end,
 			desc = "find function by treesitter in current buffer",
+		},
+		{
+			"<leader>fh",
+			function()
+				require("fzf-lua").help_tags({})
+			end,
+			desc = "find help",
+		},
+		{
+			"<leader>gb",
+			function()
+				require("fzf-lua").git_branches({})
+			end,
+			desc = "find git branches",
 		},
 	},
 }

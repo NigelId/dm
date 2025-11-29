@@ -20,7 +20,6 @@ vim.opt.rtp:prepend(lazypath)
 -- This is also a good place to setup other settings (vim.opt)
 
 require("config.options")
-require("config.colorscheme").set_hl()
 require("config.keymaps")
 require("config.autocmds")
 require("config.lspconfigs")
@@ -51,3 +50,5 @@ require("lazy").setup({
 		},
 	},
 })
+
+require("config.colorscheme").set_hl()
