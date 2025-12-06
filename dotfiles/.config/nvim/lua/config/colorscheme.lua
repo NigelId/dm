@@ -51,6 +51,8 @@ function M.set_hl()
 	-- winbar stuff
 	vim.api.nvim_set_hl(0, "Winbar", { fg = "#f1e5c9", bg = "#14161b" })
 	vim.api.nvim_set_hl(0, "WinbarNC", { fg = "#f1e5c9", bg = "#14161b" })
+	vim.api.nvim_set_hl(0, "StatusLineNC", { fg = "#14161b", bg = "#14161b" })
+	vim.api.nvim_set_hl(0, "StatusLine", { fg = "#14161b", bg = "#14161b" })
 end
 
 return M

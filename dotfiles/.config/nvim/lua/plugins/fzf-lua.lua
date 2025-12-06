@@ -10,7 +10,7 @@ return {
 	},
 	keys = {
 		{
-			"<leader>ff",
+			"<leader>cd",
 			function()
 				require("fzf-lua").files({})
 			end,
@@ -59,7 +59,7 @@ return {
 			desc = "find treesitter symbols in buffer",
 		},
 		{
-			"<leader>fg",
+			"<leader>ff",
 			function()
 				require("fzf-lua").treesitter({
 					query = "[function] ",

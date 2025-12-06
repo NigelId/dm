@@ -67,6 +67,6 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 		if vim.api.nvim_win_get_config(0).relative ~= "" then
 			return
 		end
-		vim.wo.winbar = "%f"
+		vim.wo.winbar = "%f %m"
 	end,
 })
