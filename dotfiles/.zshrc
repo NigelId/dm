@@ -106,6 +106,4 @@ bindkey '^[r' fzf-and-run-widget
 
 # complete -cf sudo
 # complete -cf man
-rfkill unblock all
-
 
