@@ -1,4 +1,4 @@
-local servers = { "lua_ls", "clangd", "cmake", "bashls", "pyright" }
+local servers = { "lua_ls", "clangd", "cmake", "bashls", "pyright", "tinymist" }
 
 vim.lsp.enable(servers)
 

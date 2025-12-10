@@ -10,6 +10,7 @@ return {
 			cmake = { "gersemi" },
 			-- You can customize some of the format options for the filetype (:help conform.format)
 			rust = { "rustfmt" },
+			typst = { "typstyle" },
 		},
 		format_on_save = {
 			timeout_ms = 500,
