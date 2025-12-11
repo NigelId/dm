@@ -23,6 +23,7 @@
   "oil.nvim": { "branch": "master", "commit": "01cb3a8ad7d5e8707041edc775af83dbf33838f4" },
   "org-bullets.nvim": { "branch": "main", "commit": "21437cfa99c70f2c18977bffd423f912a7b832ea" },
   "orgmode": { "branch": "master", "commit": "dc01c6fb7d8097232708a87593693909b4509f7f" },
+  "ring0-dark.nvim": { "branch": "main", "commit": "17d7ec13e2a4b9167aac1ee8f249cb783249c821" },
   "snipe.nvim": { "branch": "main", "commit": "d2d196c335919767803f905d573ce66340e33ee6" },
   "tabout.nvim": { "branch": "master", "commit": "9a3499480a8e53dcaa665e2836f287e3b7764009" },
   "toggleterm.nvim": { "branch": "main", "commit": "50ea089fc548917cc3cc16b46a8211833b9e3c7c" },

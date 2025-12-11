@@ -33,23 +33,6 @@ return {
 	s({ trig = "pp", snippetType = "autosnippet" }, fmta("std::cout<<<< <>  ;", i(1, "args"))),
 	s({ trig = "pn", snippetType = "autosnippet" }, fmta("std::cout<<<< <> <<<< '\\n' ;", i(1, "args"))),
 	s(
-		{ trig = "([%w_]+)class ", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-		fmta(
-			[[
-      class <>
-      {
-         <>
-      };
-      ]],
-			{
-				f(function(_, snip)
-					return snip.captures[1]
-				end),
-				i(1),
-			}
-		)
-	),
-	s(
 		{ trig = "class", snippetType = "autosnippet" },
 		fmta(
 			[[
@@ -71,23 +54,6 @@ return {
       };
       ]],
 			{ i(1, "Struct"), i(2) }
-		)
-	),
-	s(
-		{ trig = "([%w_]+)struc ", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-		fmta(
-			[[
-      struct <>
-      {
-         <>
-      };
-      ]],
-			{
-				f(function(_, snip)
-					return snip.captures[1]
-				end),
-				i(1),
-			}
 		)
 	),
 }
