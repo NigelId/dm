@@ -39,7 +39,7 @@ vim.opt.selection = "inclusive"
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.modifiable = true
 vim.opt.encoding = "UTF-8"
-vim.opt.timeoutlen = 400
+vim.opt.timeoutlen = 300
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.laststatus = 0
@@ -57,7 +57,6 @@ vim.opt.autoread = true
 vim.opt.autowrite = false
 vim.opt.virtualedit = "block"
 vim.opt.confirm = true
-vim.cmd([["colorscheme quiet"]])
 
 local undo_dir = vim.fn.expand("~/.local/share/nvim/undo/")
 
