@@ -10,6 +10,9 @@ vim.diagnostic.config({
 vim.lsp.config("bashls", {
 	filetypes = { "bash", "zsh" },
 })
+vim.lsp.config("clangd", {
+	cmd = { "clangd", "--header-insertion=never" },
+})
 
 vim.api.nvim_create_autocmd("InsertEnter", {
 	callback = function()
