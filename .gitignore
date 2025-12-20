@@ -9,3 +9,4 @@ notes/*.tex
 _minted/
 dotfiles/Pictures/Captures/
 dotfiles/Pictures/Screenshots/
+lazy-lock.json
