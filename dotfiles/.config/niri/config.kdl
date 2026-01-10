@@ -274,7 +274,7 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-sh-at-startup "ghostty --fullscreen -e tmux"
+spawn-sh-at-startup "ghostty --maximize -e tmux"
 spawn-at-startup "hypridle"
 spawn-at-startup "sunsetr"
 spawn-at-startup "fcitx5"
