@@ -13,47 +13,47 @@
 -- local rep = require("luasnip.extras").rep
 
 return {
-	-- s({
-	-- 	trig = "pp",
-	-- 	snippetType = "autosnippet",
-	-- }, fmta("std::cout<< <> ;", i(1, "args"))),
-	s(
-		{ trig = "main ", snippetType = "autosnippet" },
-		fmta(
-			[[
+   -- s({
+   -- 	trig = "pp",
+   -- 	snippetType = "autosnippet",
+   -- }, fmta("std::cout<< <> ;", i(1, "args"))),
+   s(
+      { trig = "main ", snippetType = "autosnippet" },
+      fmta(
+         [[
             int main (int argc, char *argv[])
             {
                <>
                return 0;
             }
       ]],
-			i(1)
-		)
-	),
-	s({ trig = "pp", snippetType = "autosnippet" }, fmta("std::cout<<<< <>  ;", i(1, "args"))),
-	s({ trig = "pn", snippetType = "autosnippet" }, fmta("std::cout<<<< <> <<<< '\\n' ;", i(1, "args"))),
-	s(
-		{ trig = "class ", snippetType = "autosnippet" },
-		fmta(
-			[[
+         i(1)
+      )
+   ),
+   s({ trig = "pp", snippetType = "autosnippet" }, fmta("std::cout<<<< <>  ;", i(1, "args"))),
+   s({ trig = "pn", snippetType = "autosnippet" }, fmta("std::cout<<<< <> <<<< '\\n' ;", i(1, "args"))),
+   s(
+      { trig = "cls ", snippetType = "autosnippet" },
+      fmta(
+         [[
       class <>
       {
          <>
       };
       ]],
-			{ i(1, "Class"), i(2) }
-		)
-	),
-	s(
-		{ trig = "struct ", snippetType = "autosnippet" },
-		fmta(
-			[[
+         { i(1, "Class"), i(2) }
+      )
+   ),
+   s(
+      { trig = "str ", snippetType = "autosnippet" },
+      fmta(
+         [[
       struct <>
       {
          <>
       };
       ]],
-			{ i(1, "Struct"), i(2) }
-		)
-	),
+         { i(1, "Struct"), i(2) }
+      )
+   ),
 }

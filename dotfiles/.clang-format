@@ -2,7 +2,7 @@ BasedOnStyle: LLVM
 IndentWidth: 4
 BreakBeforeBraces : Allman 
 AllowShortLambdasOnASingleLine: false
-ColumnLimit: 120
+ColumnLimit: 88
 Cpp11BracedListStyle: false
 SpaceBeforeCpp11BracedList: true
 AlignAfterOpenBracket: DontAlign
