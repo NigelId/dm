@@ -33,7 +33,7 @@ return {
    s({ trig = "pp", snippetType = "autosnippet" }, fmta("std::cout<<<< <>  ;", i(1, "args"))),
    s({ trig = "pn", snippetType = "autosnippet" }, fmta("std::cout<<<< <> <<<< '\\n' ;", i(1, "args"))),
    s(
-      { trig = "cls ", snippetType = "autosnippet" },
+      { trig = "clas ", snippetType = "autosnippet" },
       fmta(
          [[
       class <>
@@ -45,7 +45,7 @@ return {
       )
    ),
    s(
-      { trig = "str ", snippetType = "autosnippet" },
+      { trig = "stru ", snippetType = "autosnippet" },
       fmta(
          [[
       struct <>
@@ -54,6 +54,17 @@ return {
       };
       ]],
          { i(1, "Struct"), i(2) }
+      )
+   ),
+   s(
+      { trig = "doxy ", snippetType = "autosnippet" },
+      fmta(
+         [[
+         /**
+          * <>
+          */
+      ]],
+         { i(0) }
       )
    ),
 }

@@ -1,31 +1,33 @@
-local servers = { "lua_ls", "clangd", "cmake", "bashls", "pyright", "tinymist" }
+local servers = { "lua_ls", "clangd", "cmake", "bashls", "pyright", "tinymist", "java-language-server", "jdtls" }
 
 vim.lsp.enable(servers)
 
 vim.diagnostic.config({
-	virtual_text = true,
-	signs = false,
+   virtual_text = true,
+   signs = false,
 })
 
 vim.lsp.config("bashls", {
-	filetypes = { "bash", "zsh" },
+   filetypes = { "bash", "zsh" },
 })
 vim.lsp.config("clangd", {
-	cmd = { "clangd", "--header-insertion=never" },
+   cmd = { "clangd", "--header-insertion=never" },
 })
 
 vim.api.nvim_create_autocmd("InsertEnter", {
-	callback = function()
-		vim.diagnostic.hide()
-	end,
+   callback = function()
+      vim.diagnostic.hide()
+   end,
 })
 
 vim.api.nvim_create_autocmd("InsertLeave", {
-	callback = function()
-		vim.diagnostic.show()
-	end,
+   callback = function()
+      vim.diagnostic.show()
+   end,
 })
 
 vim.keymap.set("n", "gd", function()
-	vim.lsp.buf.definition()
+   vim.lsp.buf.definition()
 end, { desc = "show definitions" })
+
+vim.lsp.handlers["$/progress"] = function() end
