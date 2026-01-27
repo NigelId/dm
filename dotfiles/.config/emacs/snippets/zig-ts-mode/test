@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: fori
+# key: forii
+# --
+
+for ($1, 0...)|${2:value}, ${3:i}| \{$0\}

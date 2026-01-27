@@ -54,7 +54,7 @@ eval "$(dircolors -b)"
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-alias ls='eza -G --icons --color'
+alias ls='eza -G --icons --color auto'
 alias grep='grep --color=auto'
 alias s@='source /home/nigel/.zshrc'
 alias yeet='yay -Rc'
@@ -76,7 +76,7 @@ alias repo-gen='gh repo create --source=. --private --remote origin'
 alias ff='yazi'
 alias c='clear'
 alias py='python'
-alias vi='nvim'
+alias vi="TERM=tmux-direct emacsclient -t -a ''"
 alias log='git log --oneline --graph --decorate'
 
 alias battery='cat /sys/class/power_supply/BAT0/capacity'
@@ -84,7 +84,8 @@ alias battery='cat /sys/class/power_supply/BAT0/capacity'
 
 export MANPAGER="nvim +Man!"
 export PATH=/usr/local/texlive/2025/bin/x86_64-linux:$PATH
-export EDITOR=nvim
+export EDITOR="emacsclient -t -a ''"
+export VISUAL="emacsclient -c -a emacs"
 
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
