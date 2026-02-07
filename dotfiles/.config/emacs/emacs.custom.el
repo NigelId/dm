@@ -5,9 +5,24 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("f9d423fcd4581f368b08c720f04d206ee80b37bfb314fa37e279f554b6f415e9"
+   '("6a9d549498de6eff02b6bb584d53175f7f70fc2663bed7593d660c37fe8c8b71"
+     "de86616be351d5acbc7e5f93ff8d92867e9fbafae1069875101ba7c116b69e91"
+     "af55980fc22385d81631749a37d9d43e59b55b01855416c2df491a59b3e512e9"
+     "5a67c73454c8274c47f728688abf71fd4e9b4cd0c057a38db33a0c91229d6c55"
+     "e3ce87adfeaa1a8b2b12d12114d937495f48c6624436b5cc65cba452b3a2d07f"
+     "986965808b5e398dcbdcdbc117c61d96fd14d6f903ea8d91403f5b98c64dc9db"
+     "f9d423fcd4581f368b08c720f04d206ee80b37bfb314fa37e279f554b6f415e9"
      default))
- '(package-selected-packages nil)
+ '(package-selected-packages
+   '(cheat-sh colorful-mode company diff-hl doom-modeline doom-themes
+              elcord evil-collection evil-commentary evil-goggles
+              evil-terminal-cursor-changer evil-textobj-tree-sitter
+              flycheck format-all general golden-ratio good-scroll
+              helpful ligature lsp-java lsp-ui marginalia mistty
+              nerd-icons-completion nerd-icons-dired
+              nerd-icons-ibuffer org-auto-tangle org-superstar
+              pdf-tools tab-jump-out toc-org undo-fu-session vertico
+              ws-butler xclip yasnippet zig-mode))
  '(package-vc-selected-packages '((grease :url "https://github.com/mwac-dev/grease.el"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

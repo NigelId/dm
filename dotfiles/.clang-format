@@ -6,20 +6,29 @@ Cpp11BracedListStyle: false
 SpaceBeforeCpp11BracedList: true
 
 BreakConstructorInitializers: BeforeComma
+BreakInheritanceList: BeforeComma
 BreakTemplateDeclarations: Yes
-BreakBeforeBraces : Allman 
+
+BreakBeforeBraces : Allman
+
+# TODO: bump to clang 22
+# BreakBeforeCloseBracketIf: true
+# BreakBeforeCloseBracketLoop: true
+
+BreakBeforeTemplateCloser: true
+BreakBeforeTernaryOperators: true
 
 AllowShortLambdasOnASingleLine: false
 AllowAllConstructorInitializersOnNextLine: true
 AllowShortFunctionsOnASingleLine: Inline
 AllowShortCaseLabelsOnASingleLine: true
 
-AlignAfterOpenBracket: DontAlign
+AlignAfterOpenBracket: BlockIndent
 AlignArrayOfStructures: Left
 
-PointerAlignment: Left            
-DerivePointerAlignment: false    
-Standard: Latest                
+PointerAlignment: Left
+DerivePointerAlignment: false
+Standard: Latest
 SortIncludes: true
 SortUsingDeclarations: true
 
@@ -33,8 +42,11 @@ IncludeCategories:
   - Regex:           '.*'
     Priority:        3
 
-StatementMacros: 
+StatementMacros:
   - Q_UNUSED
   - QT_REQUIRE_VERSION
 TabWidth: 4
 UseTab: Never
+
+BinPackParameters: OnePerLine
+IndentCaseLabels: true

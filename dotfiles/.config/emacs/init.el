@@ -117,7 +117,7 @@
   :after evil
   :config
   (setq evil-collection-mode-list
-        '(dired ibuffer vertico info eshell compile helpful eww (package-menu package) (custom cus-edit)))
+        '(dired ibuffer woman vertico info eshell compile helpful eww (package-menu package) (custom cus-edit) (pdf pdf-view)))
   (evil-collection-init))
 
 (use-package evil-commentary
@@ -126,7 +126,7 @@
   (evil-commentary-mode))
 
 (set-face-attribute 'fixed-pitch nil
-                    :font "JetBrainsMono Nerd Font"
+                    :family "JetBrainsMono Nerd Font"
                     :height 120
                     :weight 'normal)
 
@@ -187,6 +187,7 @@
              (find-file "~/.config/emacs/init.org"))
            :wk "Find config")
     "ff" '(find-file :wk "Find file")
+    "fp" '(project-find-file :wk "Find file/Find projects")
     "fo" '(recentf-open :wk "Recent files")
     "w"  '(save-buffer :wk "Save")
     "q"  '(evil-quit :wk "Quit"))
@@ -202,6 +203,9 @@
    "M-r" 'compile
    "M-q" 'evil-quit)
 
+  (nigel/leader-keys
+    "xx" '(flycheck-list-errors :wk "List errors")
+  )
   (nigel/leader-keys
     "zi" '(lambda () (interactive)
             (toggle-input-method))))
@@ -310,7 +314,8 @@
 (use-package company
   :hook (after-init . global-company-mode)
   :config
-  (setq company-minimum-prefix-length 2))
+  (setq company-minimum-prefix-length 2
+        company-idle-delay 0.1))
 
 (use-package yasnippet
   :init
@@ -454,19 +459,6 @@
                      (interactive)
                      (display-line-numbers-mode -1))))
 
-(use-package doom-themes
-  :custom
-  (doom-themes-enable-bold t)
-  (doom-themes-enable-italic nil)
-  (doom-themes-treemacs-theme "doom-atom")
-  :config
-  (load-theme 'doom-dark+ t)
-  (doom-themes-neotree-config)
-  (doom-themes-treemacs-config)
-  (doom-themes-org-config)
-  (setq ring-bell-function 'ignore))
-
-
 (use-package good-scroll
   :init
   (good-scroll-mode))
@@ -530,20 +522,8 @@
   (elcord-mode))
 
 (use-package mistty
-  :preface
-  ;; shutting up warnings, don't matter can skip.
-  (declare-function mistty-send-key-sequence "mistty")
+  :bind (("M-e" . mistty) ("C-l" . mistty-clear)))
 
-  (defun my-mistty-enter-send-sequence ()
-    (remove-hook 'pre-command-hook #'my-mistty-enter-send-sequence t)
-    (call-interactively #'mistty-send-key-sequence))
-
-  :bind (("M-e" . mistty))
-  :hook
-  (mistty-mode . (lambda ()
-                   (add-hook 'pre-command-hook
-                             #'my-mistty-enter-send-sequence
-                             nil t))))
 (use-package compile
   :ensure nil
   :config
@@ -619,7 +599,6 @@
   (add-to-list 'global-colorful-modes 'helpful-mode))
 
 (use-package evil-goggles
-  :ensure t
   :config
   (evil-goggles-mode)
 
@@ -628,3 +607,60 @@
   ;; some red color (as defined by the color theme)
   ;; other faces such as `diff-added` will be used for other actions
   (evil-goggles-use-diff-faces))
+
+(use-package cheat-sh)
+
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(setq find-file-visit-truename t
+      vc-follow-symlinks t)
+
+(define-key minibuffer-local-map     (kbd "M-n") #'next-line)
+(define-key minibuffer-local-map     (kbd "M-p") #'previous-line)
+
+(define-key minibuffer-local-ns-map  (kbd "M-n") #'next-line)
+(define-key minibuffer-local-ns-map  (kbd "M-p") #'previous-line)
+
+(define-key minibuffer-local-completion-map (kbd "m-n") #'next-line)
+(define-key minibuffer-local-completion-map (kbd "m-p") #'previous-line)
+
+(define-key minibuffer-local-must-match-map (kbd "m-n") #'next-line)
+(define-key minibuffer-local-must-match-map (kbd "m-p") #'previous-line)
+
+(use-package doom-themes
+  :custom
+  (doom-themes-enable-bold t)
+  (doom-themes-enable-italic nil)
+  (doom-themes-treemacs-theme "doom-atom")
+  :config
+  (load-theme 'doom-dark+ t)
+
+  (doom-themes-neotree-config)
+  (doom-themes-treemacs-config)
+  (doom-themes-org-config))
+
+;; This assumes you've installed the package via MELPA.
+(use-package ligature
+  :config
+  ;; Enable the "www" ligature in every possible major mode
+  (ligature-set-ligatures 't '("www"))
+  ;; Enable traditional ligature support in eww-mode, if the
+  ;; `variable-pitch' face supports it
+  (ligature-set-ligatures 'eww-mode '("ff" "fi" "ffi"))
+  ;; Enable all Cascadia Code ligatures in programming modes
+  (ligature-set-ligatures 'prog-mode '("|||>" "<|||" "<==>" "<!--" "####" "~~>" "***" "||=" "||>"
+                                       ":::" "::=" "=:=" "===" "==>" "=!=" "=>>" "=<<" "=/=" "!=="
+                                       "!!." ">=>" ">>=" ">>>" ">>-" ">->" "->>" "-->" "---" "-<<"
+                                       "<~~" "<~>" "<*>" "<||" "<|>" "<$>" "<==" "<=>" "<=<" "<->"
+                                       "<--" "<-<" "<<=" "<<-" "<<<" "<+>" "</>" "###" "#_(" "..<"
+                                       "..." "+++" "/==" "///" "_|_" "www" "&&" "^=" "~~" "~@" "~="
+                                       "~>" "~-" "**" "*>" "*/" "||" "|}" "|]" "|=" "|>" "|-" "{|"
+                                       "[|" "]#" "::" ":=" ":>" ":<" "$>" "==" "=>" "!=" "!!" ">:"
+                                       ">=" ">>" ">-" "-~" "-|" "->" "--" "-<" "<~" "<*" "<|" "<:"
+                                       "<$" "<=" "<>" "<-" "<<" "<+" "</" "#{" "#[" "#:" "#=" "#!"
+                                       "##" "#(" "#?" "#_" "%%" ".=" ".-" ".." ".?" "+>" "++" "?:"
+                                       "?=" "?." "??" ";;" "/*" "/=" "/>" "//" "__" "~~" "(*" "*)"
+                                       "\\\\" "://"))
+  ;; Enables ligature checks globally in all buffers. You can also do it
+  ;; per mode with `ligature-mode'.
+  (global-ligature-mode t))
